@@ -5,9 +5,28 @@ class TopSearchBar extends Component {
   render(){
 
     let seachYear = 2018;
-    let searchMake = ['Audi', 'Honda', 'Hundai', 'Lamborghini', 'Maserati', 'Subaru', 'Toyota'];
-    let hondaModel = ["Accord", ]
+    let searchMake = ["Audi","Honda","Hundai","Lamborghini","Maserati", "Subaru","Toyota"];
 
+    // Audi
+    let audiModel = ["A3","Q3","A5"];
+    let audiBody = ["Sedan","Coupe","SUV"];
+    let audiTrim = ["2.OT","2.OT","2.OT"];
+    // Honda
+    let hondaModel = ["Accord","Civic","Odyssey","CR-V","HR-V"];
+    let hondaBody = ["Sedan","Hatchback","Van","SUV"];
+    let hondaTrim = ["LX"];
+    // Lamborghini
+    let lambModel = ["Aventador"];
+    let lambBody = ["Coupe"];
+    let lambTrim = ["SVRoadster"];
+    // Maserati
+    let maseratiModel = ["GranTurismo", "Levante"];
+    let maseratiBody = ["Coupe", "SUV"];
+    let maseratiTrim = ["Sports","S GranLusso"];
+    // Subaru
+    let subaruModel = ["Outback"];
+    let subaruBody = ["Hatchback"];
+    let subaruTrim = ["2.5i"];
 
 
 
