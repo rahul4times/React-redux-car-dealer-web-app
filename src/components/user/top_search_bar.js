@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-export default class TopSearchBar extends Component{
+import { connect } from 'react-redux';
+
+class TopSearchBar extends Component {
   render(){
     return(
       <div className="top-search-bar">
@@ -61,3 +63,12 @@ export default class TopSearchBar extends Component{
     );
   }
 }
+
+function mapStateToProps(state, props){
+  console.log('cars on searchbar: ', state.cars);
+  return{
+    cars:state.cars
+  }
+}
+
+export default connect(mapStateToProps, null)(TopSearchBar);

@@ -18,7 +18,7 @@ import OneCar from './components/user/one_car';
 class App extends Component {
 
   componentDidMount(){
-    
+    this.props.getCars();
   }
 
   render() {
@@ -49,4 +49,11 @@ class App extends Component {
   }
 }
 
-export default App;
+function mapDispatchToProps(dispatch){
+  return{
+    getCars: bindActionCreators(getCars, dispatch)
+  }
+}
+
+
+export default connect(null, mapDispatchToProps) (App);

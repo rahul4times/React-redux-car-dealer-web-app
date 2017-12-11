@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 class CarsList extends Component {
   render(){
     return(
@@ -8,6 +9,10 @@ class CarsList extends Component {
       </div>
     );
   }
+}
+
+function mapStateToProps(){
+
 }
 
 export default CarsList;
