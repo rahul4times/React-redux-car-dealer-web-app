@@ -1,0 +1,33 @@
+body {
+  background-color: #d3d5d4;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.footer-top{
+  background-color: #283E51;
+  color: #d3d5d4;
+  padding: 4em;
+}
+.footer-bottom{
+  background-color: #d3d5d4;
+  color: #283E51;
+  padding: 1em;
+}
+.light-text{
+  font-weight: lighter;
+}
+.top-search-bar{
+  background-color: #d3d5d4;
+  border-top: 2px solid #00C49C;
+  padding: 0.5em;
+}
+.text-align{
+  text-align: center;
+}
+.services{
+  padding: 5em;
+}
+.car-icon{
+  margin-right: 7px;
+}
