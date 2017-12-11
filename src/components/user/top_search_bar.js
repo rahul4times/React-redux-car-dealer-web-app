@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class TopSearchBar extends Component {
+  state ={
+    year: 0,
+    make: '',
+    model: '',
+    body: '',
+    trim: ''
+  }
+
   render(){
 
     let seachYear = 2018;
@@ -23,14 +31,24 @@ class TopSearchBar extends Component {
     let maseratiModel = ["GranTurismo", "Levante"];
     let maseratiBody = ["Coupe", "SUV"];
     let maseratiTrim = ["Sports","S GranLusso"];
+    // Mercedes-benz
+    let mercedesModel = ["C-Class"];
+    let mercedesBody = ["Sedan","Convertible","Coupe"];
+    let mercedesTrim = ["C300","AMG-C43"];
     // Subaru
     let subaruModel = ["Outback"];
     let subaruBody = ["Hatchback"];
     let subaruTrim = ["2.5i"];
+    // Toyota
+    let toyotaModel = ["4Runner","Avalon","Camry","Tocoma","Tundra"];
+    let toyotaBody = ["SUV","Sedan","Truck"];
+    let toyotaTrim = ["SR5","XLE","LE","SR"];
 
+    let makes = searchMake.map(make => {
+      return (<option key={make} value={make}>{make}</option>)
+    })
 
-
-
+    
 
 
 
@@ -46,16 +64,16 @@ class TopSearchBar extends Component {
               <div className="col-2">
                 <select className="form-control">
                   <option>Select Year</option>
-
+                  <option>{seachYear}</option>
                 </select>
               </div>
               <div className="col-2">
-                <select className="form-control">
-                  <option>Select Make</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
+                <select className="form-control"
+                  value={this.state.make}
+                  onChange={(e)=>this.setState({make: e.target.value})}
+                  >
+                  <option disabled selected>Select Make</option>
+                  {makes}
                 </select>
               </div>
               <div className="col-2">
