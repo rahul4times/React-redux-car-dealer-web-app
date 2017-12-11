@@ -1,0 +1,21 @@
+import {
+  GET_CARS_PENDING,
+  GET_CARS_SUCCESS,
+  ADD_CAR_PENDING,
+  ADD_CAR_SUCCESS
+} from '../actions/cars'
+
+export default (state = [], action) => {
+  switch (action.type) {
+    case GET_CARS_PENDING:
+      return state;
+    case GET_CARS_SUCCESS:
+      return [...action.payload.data]
+    case ADD_CAR_PENDING:
+      return state;
+    case ADD_CAR_SUCCESS:
+      return [...action.payload.data]
+    default:
+      return state;
+  }
+}

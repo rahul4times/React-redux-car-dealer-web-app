@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button } from 'reactstrap';
+import { Card, CardImg, CardBody,
+  CardTitle, Button } from 'reactstrap';
 
 export default class Services extends Component{
   render(){
     return(
       <div className="services">
         <div className="container">
-          <div class="row">
+          <div className="row">
             <div className="col-3">
               <Card>
                 <CardImg top width="100%" src="https://s3.amazonaws.com/cartool/new_car.jpg" alt="New Car" />

@@ -5,9 +5,9 @@ export default class TopSearchBar extends Component{
       <div className="top-search-bar">
         <div className="container text-align">
           <form>
-            <div class="row">
+            <div className="row">
               <div className="col-2">
-                <select class="form-control">
+                <select className="form-control">
                   <option>Select Year</option>
                   <option>2</option>
                   <option>3</option>
@@ -16,7 +16,7 @@ export default class TopSearchBar extends Component{
                 </select>
               </div>
               <div className="col-2">
-                <select class="form-control">
+                <select className="form-control">
                   <option>Select Make</option>
                   <option>2</option>
                   <option>3</option>
@@ -25,7 +25,7 @@ export default class TopSearchBar extends Component{
                 </select>
               </div>
               <div className="col-2">
-                <select class="form-control">
+                <select className="form-control">
                   <option>Select Model</option>
                   <option>2</option>
                   <option>3</option>
@@ -34,7 +34,7 @@ export default class TopSearchBar extends Component{
                 </select>
               </div>
               <div className="col-2">
-                <select class="form-control">
+                <select className="form-control">
                   <option>Select Body</option>
                   <option>2</option>
                   <option>3</option>
@@ -43,7 +43,7 @@ export default class TopSearchBar extends Component{
                 </select>
               </div>
               <div className="col-2">
-                <select class="form-control">
+                <select className="form-control">
                   <option>Select Trim</option>
                   <option>2</option>
                   <option>3</option>
@@ -52,7 +52,7 @@ export default class TopSearchBar extends Component{
                 </select>
               </div>
               <div className="col-2">
-                <button type="submit" class="btn btn-success btn-block">Search</button>
+                <button type="submit" className="btn btn-success btn-block">Search</button>
               </div>
             </div>
           </form>

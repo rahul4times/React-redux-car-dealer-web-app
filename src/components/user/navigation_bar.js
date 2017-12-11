@@ -11,6 +11,7 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem } from 'reactstrap';
+
 import Icon from 'react-icons-kit';
 import { car } from 'react-icons-kit/fa/car';
 
@@ -43,13 +44,13 @@ export default class NavigatioBar extends React.Component {
                   <NavLink href="/cars">NEW CARS</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="">FINANCE</NavLink>
+                  <NavLink href="/">FINANCE</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="">SERVICE</NavLink>
+                  <NavLink href="/">SERVICE</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="">PARTS</NavLink>
+                  <NavLink href="/">PARTS</NavLink>
                 </NavItem>
                 <UncontrolledDropdown nav inNavbar>
                   <DropdownToggle nav caret>

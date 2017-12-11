@@ -1,8 +1,10 @@
-//import cars from './cars'
+import cars from './cars'
 import { combineReducers } from 'redux';
-const rootReducer = combineReducers({
 
+  const rootReducer = combineReducers({
 
+    cars
 
-});
+  });
+
 export default rootReducer;

@@ -5,7 +5,7 @@ export default class FooterTop extends Component {
     return(
       <div className="footer-top light-text">
         <div className="container">
-          <div class="row">
+          <div className="row">
             <div className="col-4">
               <h5>CONTACT</h5>
               515 E Grant St, <br/>

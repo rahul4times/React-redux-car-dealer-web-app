@@ -1,4 +1,11 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { getCars } from './actions/cars';
+
+// Components
 import NavigationBar from './components/user/navigation_bar';
 import TopSearchBar from './components/user/top_search_bar';
 import FooterTop from './components/user/footer_top';
@@ -6,14 +13,14 @@ import FooterBottom from './components/user/footer_bottom';
 import UserHomePage from './components/user/home';
 import CarsList from './components/user/cars_list';
 import OneCar from './components/user/one_car';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Switch
-} from 'react-router-dom';
+
 
 class App extends Component {
+
+  componentDidMount(){
+    
+  }
+
   render() {
     return (
       <div className="App">
@@ -33,6 +40,7 @@ class App extends Component {
 
             <FooterTop />
             <FooterBottom />
+
           </div>
         </Router>
 
