@@ -52,7 +52,7 @@ export default class NavigatioBar extends React.Component {
                 <NavItem>
                   <NavLink href="/">PARTS</NavLink>
                 </NavItem>
-                <UncontrolledDropdown nav inNavbar>
+                <UncontrolledDropdown nav>
                   <DropdownToggle nav caret>
                     ABOUT
                   </DropdownToggle>

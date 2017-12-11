@@ -3,6 +3,22 @@ import { connect } from 'react-redux';
 
 class TopSearchBar extends Component {
   render(){
+
+    let seachYear = 2018;
+    let searchMake = ['Audi', 'Honda', 'Hundai', 'Lamborghini', 'Maserati', 'Subaru', 'Toyota'];
+    let hondaModel = ["Accord", ]
+
+
+
+
+
+
+
+
+
+
+
+
     return(
       <div className="top-search-bar">
         <div className="container text-align">
@@ -11,10 +27,7 @@ class TopSearchBar extends Component {
               <div className="col-2">
                 <select className="form-control">
                   <option>Select Year</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
+
                 </select>
               </div>
               <div className="col-2">
@@ -64,11 +77,6 @@ class TopSearchBar extends Component {
   }
 }
 
-function mapStateToProps(state, props){
-  console.log('cars on searchbar: ', state.cars);
-  return{
-    cars:state.cars
-  }
-}
 
-export default connect(mapStateToProps, null)(TopSearchBar);
+
+export default TopSearchBar;

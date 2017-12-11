@@ -11,8 +11,5 @@ class CarsList extends Component {
   }
 }
 
-function mapStateToProps(){
-
-}
 
 export default CarsList;
