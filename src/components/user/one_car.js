@@ -6,6 +6,9 @@ import { Table } from 'reactstrap';
 import { Button } from 'reactstrap';
 import Icon from 'react-icons-kit';
 import { car } from 'react-icons-kit/fa/car';
+import { facebook } from 'react-icons-kit/fa/facebook';
+import { twitter } from 'react-icons-kit/fa/twitter';
+import { instagram } from 'react-icons-kit/fa/instagram';
 
 class OneCar extends Component {
   render(){
@@ -82,9 +85,9 @@ class OneCar extends Component {
                 </div>
               </div>
 
-              <div className="card border-danger mb-3">
-                <div className="card-header text-white bg-danger">Want To Know More?</div>
-                <div className="card-body text-danger">
+              <div className="card border-secondary mb-3">
+                <div className="card-header text-white bg-success">Want To Know More?</div>
+                <div className="card-body text-success">
                   <div className="row">
                     <h5>Phone: 888-123-9876</h5>
                   </div>
@@ -104,7 +107,7 @@ class OneCar extends Component {
         <Row>
           <Col md="8">
             <div className="card border-success mb-3">
-              <div className="card-header">Highlighted Features</div>
+              <div className="card-header text-success">Highlighted Features</div>
               <div className="card-body">
                 <div className="feature-highlight">
                 <Table>
@@ -132,7 +135,21 @@ class OneCar extends Component {
             </div>
           </Col>
           <Col md="4">
-            Schedule Test Drive
+            <div class="card border-success mb-3">
+            <div class="card-header text-success">Share This Vehicle</div>
+            <div class="card-body text-success">
+              <h4 class="card-title">
+                <Icon className="4x" icon={facebook}/>
+              </h4>
+              <h4 class="card-title">
+                <Icon icon={twitter}/>
+              </h4>
+              <h4 class="card-title">
+                <Icon icon={instagram}/>
+              </h4>
+
+            </div>
+          </div>
           </Col>
         </Row>
       </Container>

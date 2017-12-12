@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button, Row, Col, Table } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 const Car = ({car}) => {
 
@@ -12,7 +13,9 @@ const Car = ({car}) => {
             <CardImg className="carlist-margin" top width="100%" src={car.link} alt={car.make} />
           </Col>
           <Col md="5">
-            <CardTitle className="title"><h3>{car.year} {car.make} {car.model} {car.trim}</h3></CardTitle>
+            <Link to={`/cars/${car.id}`}>
+              <CardTitle className="title"><h3>{car.year} {car.make} {car.model} {car.trim}</h3></CardTitle>
+            </Link>
             <CardSubtitle className="subtitle">Stock No: #{car.id}</CardSubtitle>
             <CardBody>
               <CardText>
@@ -81,7 +84,9 @@ const Car = ({car}) => {
                 </tbody>
               </Table>
               </CardText>
+              <Link to={`/cars/${car.id}`}>
               <Button className="btn btn-success">More</Button>
+            </Link>
               <br/>
             </CardBody>
           </Col>
