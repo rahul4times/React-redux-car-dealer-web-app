@@ -48,13 +48,47 @@ class TopSearchBar extends Component {
       return (<option key={make} value={make}>{make}</option>)
     })
 
-    
+    console.log('local state: ', this.state);
 
+    let cars = {
+      Honda: [
+        {
+          model: "Civic",
+          body: "hatch",
+          trim: 'ex'
+        },{
+          model: "Accord",
+          body: "sedan",
+          trim: 'dx'
+        }
+      ]
+    }
 
+    if(this.state.make) {
+      var models = cars[this.state.make].map(car => {
+        return (
+          <option key={car.model} value={car.model}>
+              {car.model}
+          </option>)
+      })
+    }
 
-
-
-
+    if(this.state.model) {
+      var body = cars[this.state.make].map(car => {
+        return (
+          <option key={car.model} value={car.body}>
+              {car.body}
+          </option>)
+      })
+    }
+    if(this.state.body) {
+      var trim = cars[this.state.make].map(car => {
+        return (
+          <option key={car.model} value={car.model}>
+              {car.trim}
+          </option>)
+      })
+    }
 
     return(
       <div className="top-search-bar">
@@ -77,30 +111,30 @@ class TopSearchBar extends Component {
                 </select>
               </div>
               <div className="col-2">
-                <select className="form-control">
-                  <option>Select Model</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
+                <select className="form-control"
+                  value={this.state.model}
+                  onChange={(e)=>this.setState({model: e.target.value})}
+                  >
+                  <option disabled selected>Select Model</option>
+                    { models ? models : '' }
                 </select>
               </div>
               <div className="col-2">
-                <select className="form-control">
-                  <option>Select Body</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
+                <select className="form-control"
+                  value={this.state.body}
+                  onChange={(e)=>this.setState({body: e.target.value})}
+                  >
+                  <option disabled selected>Select Body</option>
+                    { body ? body : '' }
                 </select>
               </div>
               <div className="col-2">
-                <select className="form-control">
-                  <option>Select Trim</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
+                <select className="form-control"
+                  value={this.state.trim}
+                  onChange={(e)=>this.setState({trim: e.target.value})}
+                  >
+                  <option disabled selected>Select Trim</option>
+                    { trim ? trim : '' }
                 </select>
               </div>
               <div className="col-2">
