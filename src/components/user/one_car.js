@@ -21,6 +21,7 @@ class OneCar extends Component {
     let image = this.props.car ? this.props.car.link : null;
     let price = this.props.car ? this.props.car.price : null;
     let sale = this.props.car ? this.props.car.sale : null;
+    let vin = this.props.car ? this.props.car.vin : null;
     let g66price = price - sale/100;
 
     let electronic = this.props.car ? this.props.car.elect_stab : null;
@@ -38,7 +39,8 @@ class OneCar extends Component {
           <Col md="12">
             <div className="card border-success mb-3">
             <div className="card-header">
-              <h3>{year} {make} {model} {trim}</h3>
+              <h3>{year} {make} {model} {trim} </h3>
+              <p className="vin-stock"><strong>VIN:</strong> {vin},  <strong>STOCK ID: </strong> {id}</p>
             </div>
           </div>
           </Col>
@@ -135,16 +137,16 @@ class OneCar extends Component {
             </div>
           </Col>
           <Col md="4">
-            <div class="card border-success mb-3">
-            <div class="card-header text-success">Share This Vehicle</div>
-            <div class="card-body text-success">
-              <h4 class="card-title">
+            <div className="card border-success mb-3">
+            <div className="card-header text-success">Share This Vehicle</div>
+            <div className="card-body text-success">
+              <h4 className="card-title">
                 <Icon className="4x" icon={facebook}/>
               </h4>
-              <h4 class="card-title">
+              <h4 className="card-title">
                 <Icon icon={twitter}/>
               </h4>
-              <h4 class="card-title">
+              <h4 className="card-title">
                 <Icon icon={instagram}/>
               </h4>
 

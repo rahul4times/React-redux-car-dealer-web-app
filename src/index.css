@@ -76,3 +76,7 @@ body {
   margin: 1em;
   text-align: justify;
 }
+.vin-stock{
+  font-size: 10px;
+  line-height: 2px;
+}

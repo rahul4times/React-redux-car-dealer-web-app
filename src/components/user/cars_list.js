@@ -26,7 +26,8 @@ class CarsList extends Component {
 
 function mapStateToProps(state, props){
   return{
-    cars: state.cars
+    cars: state.cars,
+    filter: state.filter
   }
 }
 
