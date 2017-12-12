@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
-
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { updateFilter } from '../../actions/filter';
 class TopSearchBar extends Component {
   state = {
     make: '',
     body: '',
     priceRange: ''
+  }
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.props.updateFilter(this.state);
   }
 
   render(){
@@ -43,7 +49,7 @@ class TopSearchBar extends Component {
     return(
       <div className="top-search-bar">
         <div className="container text-align">
-          <form>
+          <form onSubmit={this.handleSubmit}>
             <div className="row">
               <div className="col-3">
                 <select className="form-control"
@@ -85,6 +91,15 @@ class TopSearchBar extends Component {
   }
 }
 
+function mapStateToProps(state){
+  return{
+    filter: state.filter
+  }
+}
+
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({updateFilter: updateFilter}, dispatch)
+}
 
 
-export default TopSearchBar;
+export default connect(mapStateToProps, mapDispatchToProps)(TopSearchBar);
