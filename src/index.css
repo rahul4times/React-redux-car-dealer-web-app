@@ -56,3 +56,19 @@ body {
 .carlist-margin{
   margin: 1em;
 }
+.singleImage{
+  width: 600px;
+  height: auto;
+  border-radius: 5px;
+}
+.image-n-price{
+  background-color: #fff;
+  padding: 1.5em 0.8em;
+  border: 1px solid #00C49C;
+  border-radius: 5px;
+}
+.one-car-price{
+  border: 1px solid #c2c2c2;
+  padding:0.5em 0.8em;
+  border-radius: 4px;
+}
