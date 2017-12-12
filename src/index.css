@@ -68,7 +68,5 @@ body {
   border-radius: 5px;
 }
 .one-car-price{
-  border: 1px solid #c2c2c2;
-  padding:0.5em 0.8em;
-  border-radius: 4px;
+  text-align: right;
 }

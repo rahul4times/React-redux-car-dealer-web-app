@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Container, Row, Col } from 'reactstrap';
 import Img from 'react-image'
 import { Table } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 class OneCar extends Component {
   render(){
@@ -34,38 +35,56 @@ class OneCar extends Component {
               <Img className="singleImage" src={image} />
             </Col>
             <Col md="4">
-              <div className="one-car-price">
-                <h4>Detail Pricing</h4>
-                <div className="price">
-                   <Table size="sm">
-                     <tbody>
-                      <tr>
-                        <td>MSRP:</td>
-                        <td>${price}</td>
-                      </tr>
-                      <tr>
-                        <td>DEALER'S DISCOUNT:</td>
-                        <td>{sale}%</td>
-                      </tr>
-                      <tr>
-                        <td>G66 CAR PRICE</td>
-                        <td>{g66price}</td>
-                      </tr>
-                    </tbody>
-                   </Table>
-                   <hr/>
-                   <Table size="sm">
-                     <tbody>
-                      <tr>
-                        <td>Estimated Lease:</td>
-                        <td>$199/pm**</td>
-                      </tr>
-                      <tr>
-                        <td>Estimated Finance:</td>
-                        <td>$250/pm**</td>
-                      </tr>
-                    </tbody>
-                   </Table>
+
+              <div className="card border-secondary mb-3">
+                <div className="card-header text-white bg-success">Detail Pricing</div>
+                <div className="card-body one-car-price">
+                  <Table size="sm">
+                    <tbody>
+                     <tr>
+                       <td>MSRP:</td>
+                       <td>${price}</td>
+                     </tr>
+                     <tr>
+                       <td>Dealer's Discount:</td>
+                       <td>{sale}%</td>
+                     </tr>
+                     <tr>
+                       <td>G66 Price</td>
+                       <td>${g66price}</td>
+                     </tr>
+                   </tbody>
+                  </Table>
+                  <hr/>
+                  <Table size="sm">
+                    <tbody>
+                     <tr>
+                       <td>Estimated Lease:</td>
+                       <td>$199/pm**</td>
+                     </tr>
+                     <tr>
+                       <td>Estimated Finance:</td>
+                       <td>$250/pm**</td>
+                     </tr>
+                   </tbody>
+                  </Table>
+                </div>
+              </div>
+
+              <div className="card border-danger mb-3">
+                <div className="card-header text-white bg-danger">More</div>
+                <div className="card-body text-danger">
+                  <div className="row">
+                    <h5>Phone: 888-123-9876</h5>
+                  </div>
+
+                  <div className="row">
+                    <Button color="btn btn-danger btn-sm">Get ePrice</Button>
+                  </div>
+                  <br/>
+                  <div className="row">
+                    <Button color="btn btn-danger btn-sm">Schedule Test Drive</Button>
+                  </div>
                 </div>
               </div>
             </Col>
