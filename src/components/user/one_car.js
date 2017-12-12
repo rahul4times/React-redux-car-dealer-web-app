@@ -3,7 +3,9 @@ import { connect } from 'react-redux';
 import { Container, Row, Col } from 'reactstrap';
 import Img from 'react-image'
 import { Table } from 'reactstrap';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button } from 'reactstrap';
+import Icon from 'react-icons-kit';
+import { car } from 'react-icons-kit/fa/car';
 
 class OneCar extends Component {
   render(){
@@ -17,6 +19,15 @@ class OneCar extends Component {
     let price = this.props.car ? this.props.car.price : null;
     let sale = this.props.car ? this.props.car.sale : null;
     let g66price = price - sale/100;
+
+    let electronic = this.props.car ? this.props.car.elect_stab : null;
+    let wireless = this.props.car ? this.props.car.wireless : null;
+    let seat = this.props.car ? this.props.car.seat : null;
+    let keyless = this.props.car ? this.props.car.keyless : null;
+    let tripComp = this.props.car ? this.props.car.trip_comp : null;
+    let tirePressure = this.props.car ? this.props.car.tire_pressure : null;
+    let wiper = this.props.car ? this.props.car.wiper : null;
+    let headlight = this.props.car ? this.props.car.headlight : null;
 
     return (
       <Container>
@@ -72,12 +83,11 @@ class OneCar extends Component {
               </div>
 
               <div className="card border-danger mb-3">
-                <div className="card-header text-white bg-danger">More</div>
+                <div className="card-header text-white bg-danger">Want To Know More?</div>
                 <div className="card-body text-danger">
                   <div className="row">
                     <h5>Phone: 888-123-9876</h5>
                   </div>
-
                   <div className="row">
                     <Button color="btn btn-danger btn-sm">Get ePrice</Button>
                   </div>
@@ -90,11 +100,36 @@ class OneCar extends Component {
             </Col>
           </Row>
         </div>
-
-
+        <br/>
         <Row>
           <Col md="8">
-            detail features
+            <div className="card border-success mb-3">
+              <div className="card-header">Highlighted Features</div>
+              <div className="card-body">
+                <div className="feature-highlight">
+                <Table>
+                    <tbody>
+                     <tr>
+                       <td><Icon className="car-icon" icon={car}/> {electronic}</td>
+                       <td><Icon className="car-icon" icon={car}/> {wireless}</td>
+                     </tr>
+                     <tr>
+                       <td><Icon className="car-icon" icon={car}/> {seat}</td>
+                       <td><Icon className="car-icon" icon={car}/> {keyless}</td>
+                     </tr>
+                     <tr>
+                       <td><Icon className="car-icon" icon={car}/> {tripComp}</td>
+                       <td><Icon className="car-icon" icon={car}/> {tirePressure}</td>
+                     </tr>
+                     <tr>
+                       <td><Icon className="car-icon" icon={car}/> {wiper}</td>
+                       <td><Icon className="car-icon" icon={car}/> {headlight}</td>
+                     </tr>
+                   </tbody>
+                </Table>
+              </div>
+              </div>
+            </div>
           </Col>
           <Col md="4">
             Schedule Test Drive
