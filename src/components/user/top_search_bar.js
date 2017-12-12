@@ -53,22 +53,38 @@ class TopSearchBar extends Component {
     let cars = {
       Honda: [
         {
-          model: "Civic",
-          body: "hatch",
-          trim: 'ex'
-        },{
           model: "Accord",
-          body: "sedan",
-          trim: 'dx'
+          body: "Sedan",
+          trim: 'LX'
+        },
+        {
+          model: "Civic",
+          body: "Sedan",
+          trim: 'LX'
+        },
+        {
+          model: "Odyssey",
+          body: "Van",
+          trim: 'LX'
+        },
+        {
+          model: "CR-V",
+          body: "SUV",
+          trim: 'LX'
+        },
+        {
+          model: "HR-V",
+          body: "SUV",
+          trim: 'LX'
         }
       ]
     }
 
-    if(this.state.make) {
-      var models = cars[this.state.make].map(car => {
+    if(this.state.make == "Honda") {
+      var models = hondaModel.map(model => {
         return (
-          <option key={car.model} value={car.model}>
-              {car.model}
+          <option key={model} value={model}>
+              {model}
           </option>)
       })
     }
@@ -84,7 +100,7 @@ class TopSearchBar extends Component {
     if(this.state.body) {
       var trim = cars[this.state.make].map(car => {
         return (
-          <option key={car.model} value={car.model}>
+          <option key={car.model} value={car.trim}>
               {car.trim}
           </option>)
       })
@@ -96,15 +112,18 @@ class TopSearchBar extends Component {
           <form>
             <div className="row">
               <div className="col-2">
-                <select className="form-control">
-                  <option>Select Year</option>
+                <select className="form-control"
+                    value={this.state.year}
+                    onChange={(e)=>this.setState({year: e.target.value})}
+                  >
+                  <option disabled selected>Select Year</option>
                   <option>{seachYear}</option>
                 </select>
               </div>
               <div className="col-2">
                 <select className="form-control"
-                  value={this.state.make}
-                  onChange={(e)=>this.setState({make: e.target.value})}
+                    value={this.state.make}
+                    onChange={(e)=>this.setState({make: e.target.value})}
                   >
                   <option disabled selected>Select Make</option>
                   {makes}
