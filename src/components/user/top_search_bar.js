@@ -2,18 +2,16 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class TopSearchBar extends Component {
-  state ={
-    year: 0,
+  state = {
     make: '',
-    model: '',
     body: '',
-    trim: ''
+    priceRange: ''
   }
 
   render(){
 
 
-    let searchMake = ["Audi","Honda","Hundai","Lamborghini","Maserati", "Subaru","Toyota"];
+
 
     // // Audi
     // let audiModel = ["A3","Q3","A5"];
@@ -47,130 +45,74 @@ class TopSearchBar extends Component {
 
 
     console.log('local state: ', this.state);
-    let seachYear = 2018;
+
+    let searchMake = ["Audi","Honda","Lamborghini","Maserati", "Subaru","Toyota"];
+
     let cars = {
-      Audi: [
-        {model: "A3", body: "Sedan", trim: '2.OT'},
-        {model: "Q3", body: "Coupe", trim: '2.OT'},
-        {model: "A5", body: "SUV", trim: '2.OT'}
-      ],
-      Honda: [
-        {model: "Accord", body: "Sedan", trim: 'LX'},
-        {model: "Civic", body: "Sedan", trim: 'LX'},
-        {model: "Odyssey", body: "Van", trim: 'LX'},
-        {model: "CR-V", body: "SUV", trim: 'LX'},
-        {model: "HR-V", body: "SUV", trim: 'LX'}
-      ],
-      Lamborghini: [
-        {model: "Aventador", body: "Coupe", trim: 'SVRoadster'}
-      ],
-      Maserati: [
-        {model: "GranTurismo", body: "Coupe", trim: 'Sports'},
-        {model: "Levante", body: "SUV", trim: 'S GranLusso'},
-      ],
-      Mercedes: [
-        {model: "C-Class", body: "Sedan", trim: 'C300'},
-        {model: "C-Class", body: "Convertible", trim: 'AMG-C43'},
-        {model: "C-Class", body: "Coupe", trim: 'C300'}
-      ],
-      Subaru: [
-        {model: "Outback", body: "Hatchback", trim: '2.5i'}
-      ],
-      Toyota: [
-        {model: "4Runner", body: "SUV", trim: 'SR5'},
-        {model: "Avalon", body: "Sedan", trim: 'XLE'},
-        {model: "Camry", body: "Sedan", trim: 'LE'},
-        {model: "Tocoma", body: "Truck", trim: 'SR'},
-        {model: "Tundra", body: "Truck", trim: 'SR'}
-      ]
+      Audi: [ {body: "Sedan"}, {body: "Coupe"}, {body: "SUV"} ],
+      Honda: [ {body: "Sedan"}, {body: "Van"}, {body: "SUV"} ],
+      Lamborghini: [ {body: "Coupe"} ],
+      Maserati: [ {body: "Coupe"}, {body: "SUV"} ],
+      Mercedes: [ {body: "Convertible"}, {body: "Coupe"} ],
+      Subaru: [ {body: "Hatchback"} ],
+      Toyota: [ {body: "SUV"}, {body: "Sedan"}, {body: "Truck"} ]
     }
 
     let makes = searchMake.map((make, i) => {
       return (
         <option key={i} value={make}>
-          {this.state.year ? make : ''}
+          {make}
         </option>
       )
     })
 
     if(this.state.make) {
-      var models = cars[this.state.make].map((make, i) => {
+      var body = cars[this.state.make].map((make, i) => {
         return (
-          <option key={i} value={make.model}>
-              {make.model}
+          <option key={i} value={make.body}>
+              {make.body}
           </option>)
       })
     }
 
-    if(this.state.model) {
-      var body = cars[this.state.make].map(car => {
-        return (
-          <option key={car.model} value={car.body}>
-              {car.body}
-          </option>)
-      })
-    }
 
-    if(this.state.body) {
-      var trim = cars[this.state.make].map(car => {
-        return (
-          <option key={car.model} value={car.trim}>
-              {car.trim}
-          </option>)
-      })
-    }
+
 
     return(
       <div className="top-search-bar">
         <div className="container text-align">
           <form>
             <div className="row">
-              <div className="col-2">
-                <select className="form-control"
-                    value={this.state.year}
-                    onChange={(e)=>this.setState({year: e.target.value})}
-                  >
-                  <option defaultValue>Select Year</option>
-                  <option>{seachYear}</option>
-                </select>
-              </div>
-              <div className="col-2">
+              <div className="col-3">
                 <select className="form-control"
                     value={this.state.make}
                     onChange={(e)=>this.setState({make: e.target.value})}
                   >
-                  <option defaultValue>Select Make</option>
+                  <option defaultValue>Make</option>
                     {makes}
                 </select>
               </div>
-              <div className="col-2">
-                <select className="form-control"
-                  value={this.state.model}
-                  onChange={(e)=>this.setState({model: e.target.value})}
-                  >
-                  <option defaultValue>Select Model</option>
-                    { models ? models : '' }
-                </select>
-              </div>
-              <div className="col-2">
+              <div className="col-3">
                 <select className="form-control"
                   value={this.state.body}
                   onChange={(e)=>this.setState({body: e.target.value})}
                   >
-                  <option defaultValue>Select Body</option>
-                    { body ? body : '' }
-                </select>
+                    <option defaultValue>Body Type</option>
+                    { makes ? body : null }
+                  </select>
               </div>
-              <div className="col-2">
+              <div className="col-3">
                 <select className="form-control"
-                  value={this.state.trim}
-                  onChange={(e)=>this.setState({trim: e.target.value})}
+                  value={this.state.priceRange}
+                  onChange={(e)=>this.setState({priceRange: e.target.value})}
                   >
-                  <option defaultValue>Select Trim</option>
-                    { trim ? trim : '' }
-                </select>
+                    <option defaultValue>Price</option>
+                    <option value="lowHigh">Low To High</option>
+                    <option value="highLow">High To Low</option>
+                  </select>
               </div>
-              <div className="col-2">
+
+              <div className="col-3">
                 <button type="submit" className="btn btn-success btn-block">Search</button>
               </div>
             </div>
