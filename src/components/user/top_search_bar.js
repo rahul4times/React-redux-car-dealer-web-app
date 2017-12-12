@@ -10,40 +10,6 @@ class TopSearchBar extends Component {
 
   render(){
 
-
-
-
-    // // Audi
-    // let audiModel = ["A3","Q3","A5"];
-    // let audiBody = ["Sedan","Coupe","SUV"];
-    // let audiTrim = ["2.OT","2.OT","2.OT"];
-    // // Honda
-    // let hondaModel = ["Accord","Civic","Odyssey","CR-V","HR-V"];
-    // let hondaBody = ["Sedan","Hatchback","Van","SUV"];
-    // let hondaTrim = ["LX"];
-    // // Lamborghini
-    // let lambModel = ["Aventador"];
-    // let lambBody = ["Coupe"];
-    // let lambTrim = ["SVRoadster"];
-    // // Maserati
-    // let maseratiModel = ["GranTurismo", "Levante"];
-    // let maseratiBody = ["Coupe", "SUV"];
-    // let maseratiTrim = ["Sports","S GranLusso"];
-    // // Mercedes-benz
-    // let mercedesModel = ["C-Class"];
-    // let mercedesBody = ["Sedan","Convertible","Coupe"];
-    // let mercedesTrim = ["C300","AMG-C43"];
-    // // Subaru
-    // let subaruModel = ["Outback"];
-    // let subaruBody = ["Hatchback"];
-    // let subaruTrim = ["2.5i"];
-    // // Toyota
-    // let toyotaModel = ["4Runner","Avalon","Camry","Tocoma","Tundra"];
-    // let toyotaBody = ["SUV","Sedan","Truck"];
-    // let toyotaTrim = ["SR5","XLE","LE","SR"];
-
-
-
     console.log('local state: ', this.state);
 
     let searchMake = ["Audi","Honda","Lamborghini","Maserati", "Subaru","Toyota"];
@@ -74,9 +40,6 @@ class TopSearchBar extends Component {
           </option>)
       })
     }
-
-
-
 
     return(
       <div className="top-search-bar">

@@ -31,3 +31,28 @@ body {
 .car-icon{
   margin-right: 7px;
 }
+.carList-row{
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.title{
+  color: #283E51;
+}
+.subtitle{
+  color: #626262;
+}
+
+.carlist-table{
+  font-size: 14px;
+}
+.table th, .table td {
+  padding: 0;
+  border: none;
+}
+.price{
+  font-size: 18px;
+  text-align: right;
+}
+.carlist-margin{
+  margin: 1em;
+}
