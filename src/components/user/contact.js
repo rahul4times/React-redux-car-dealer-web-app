@@ -13,19 +13,20 @@ class ContactForm extends Component {
     umessage: '',
     followup: false,
     read: false,
-    succMsg: false
+    alertMsg: false
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.sendMessage(this.state);
-    this.setState({succMsg: true})
+    this.setState({
+      alertMsg: true, uname:'', uemail:'', uphone:'', uinterest:'', umessage:''
+    })
   }
 
-  onDismiss = () => {
-    this.setState({ succMsg: false });
+  alertMsgClose = () => {
+    this.setState({ alertMsg: false });
   }
-
 
   render(){
 
@@ -89,8 +90,8 @@ class ContactForm extends Component {
           </div>
         </div>
         <Alert
-          isOpen={this.state.succMsg}
-          toggle={this.onDismiss}
+          isOpen={this.state.alertMsg}
+          toggle={this.alertMsgClose}
           color="success">
           Message sent successfully. We will get back to you!
         </Alert>
