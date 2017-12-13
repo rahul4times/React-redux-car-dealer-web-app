@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getCars } from './actions/cars';
+import { getMessages } from './actions/message';
 
 // User Components
 import NavigationBar from './components/user/navigation_bar';
@@ -23,6 +24,7 @@ class App extends Component {
 
   componentDidMount(){
     this.props.getCars();
+    this.props.getMessages();
   }
 
   render() {
@@ -65,9 +67,9 @@ class App extends Component {
 
 function mapDispatchToProps(dispatch){
   return{
-    getCars: bindActionCreators(getCars, dispatch)
+      getCars: bindActionCreators(getCars, dispatch),
+      getMessages: bindActionCreators(getMessages, dispatch)
   }
 }
-
 
 export default connect(null, mapDispatchToProps) (App);

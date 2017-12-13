@@ -1,35 +1,30 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Alert } from 'reactstrap';
+import { connect } from 'react-redux';
 
-const Messages = (props) => {
-  return (
-    <div>
-      <Alert color="primary">
-        This is a primary alert — check it out!
-      </Alert>
-      <Alert color="secondary">
-        This is a secondary alert — check it out!
-      </Alert>
-      <Alert color="success">
-        This is a success alert — check it out!
-      </Alert>
-      <Alert color="danger">
-        This is a danger alert — check it out!
-      </Alert>
-      <Alert color="warning">
-        This is a warning alert — check it out!
-      </Alert>
-      <Alert color="info">
-        This is a info alert — check it out!
-      </Alert>
-      <Alert color="light">
-        This is a light alert — check it out!
-      </Alert>
-      <Alert color="dark">
-        This is a dark alert — check it out!
-      </Alert>
-    </div>
-  );
-};
+class Messages extends Component {
 
-export default Messages;
+  render(){
+    console.log('messages on admin page: ', this.props.messages);
+    return(
+      <div className="container">
+        <br/>
+        <div className="card border-primary mb-3">
+        <div className="card-header text-white bg-primary">Messages</div>
+          <div className="card-body text-primary">
+
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+function mapStateToProps(state, props){
+  console.log('state: ', state);
+  return{
+    messages: state.messages
+  }
+}
+
+export default connect(mapStateToProps, null)(Messages);
