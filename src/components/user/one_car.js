@@ -3,12 +3,13 @@ import { connect } from 'react-redux';
 import { Container, Row, Col } from 'reactstrap';
 import Img from 'react-image'
 import { Table } from 'reactstrap';
-import { Button } from 'reactstrap';
 import Icon from 'react-icons-kit';
 import { car } from 'react-icons-kit/fa/car';
 import { facebook } from 'react-icons-kit/fa/facebook';
 import { twitter } from 'react-icons-kit/fa/twitter';
 import { instagram } from 'react-icons-kit/fa/instagram';
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+
 
 class OneCar extends Component {
   render(){
@@ -149,9 +150,42 @@ class OneCar extends Component {
               <h4 className="card-title">
                 <Icon icon={instagram}/>
               </h4>
-
             </div>
           </div>
+          </Col>
+        </Row>
+        <Row>
+          <Col md="12">
+            <div className="card border-success">
+              <div className="card-header text-success">Get ePrice or Schedule Test Drive</div>
+                <div className="card-body text-success">
+                  <Form>
+                  <div className="row">
+                    <div className="col-3">
+                      <FormGroup>
+                        <Input type="text" name="uname" placeholder="Name" />
+                      </FormGroup>
+                    </div>
+                    <div className="col-3">
+                      <FormGroup>
+                        <Input type="email" name="uemail" placeholder="Email" />
+                      </FormGroup>
+                    </div>
+                    <div className="col-3">
+                      <FormGroup>
+                        <Input type="text" name="uphone" placeholder="Phone" />
+                      </FormGroup>
+                    </div>
+                    <div className="col-3">
+                      <FormGroup>
+                        <Input type="text" name="uinterest" value={`STOCK ID: ${id}`} />
+                      </FormGroup>
+                    </div>
+                  </div>
+                </Form>
+                </div>
+            </div>
+            <br/>
           </Col>
         </Row>
       </Container>

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { updateFilter } from '../../actions/filtered';
+
+
 class TopSearchBar extends Component {
   state = {
     make: '',
@@ -11,6 +13,7 @@ class TopSearchBar extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.updateFilter(this.state);
+
   }
 
   render(){
@@ -77,9 +80,8 @@ class TopSearchBar extends Component {
                     <option value="highLow">High To Low</option>
                   </select>
               </div>
-
               <div className="col-3">
-                <button type="submit" className="btn btn-success btn-block">Search</button>
+                  <button type="submit" className="btn btn-success btn-block">Search</button>
               </div>
             </div>
           </form>
