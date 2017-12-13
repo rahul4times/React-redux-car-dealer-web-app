@@ -16,6 +16,7 @@ import OneCar from './components/user/one_car';
 
 // Admin Components
 import AdminNavigatioBar from './components/admin/admin_top_navigation';
+import Cars from './components/admin/admin_cars';
 
 class App extends Component {
 
@@ -34,22 +35,35 @@ class App extends Component {
             <TopSearchBar /> */}
 
             <Switch>
-              <Route exact path='/admin/' component={AdminNavigatioBar} />
+              <Route path='/admin/' render={() => (
+
+                <div>
+                    <AdminNavigatioBar />
+
+                    <Route exact path='/admin/cars' component={Cars} />
+
+                </div>
+            )} />
+
+
+
 
               <Route path ='/' render={() => (
+
                 <div>
-                  <NavigationBar />
-                  <TopSearchBar />
-                  <Route exact path='/' component={UserHomePage} />
-                  <Route exact path='/cars' component={CarsList} />
-                  <Route exact path='/cars/:id' component={OneCar} />
-              </div>
+                    <NavigationBar />
+                    <TopSearchBar />
+                    <Route exact path='/' component={UserHomePage} />
+                    <Route exact path='/cars' component={CarsList} />
+                    <Route exact path='/cars/:id' component={OneCar} />
+                    <FooterTop />
+                    <FooterBottom />
+                </div>
             )} />
 
             </Switch>
 
-            <FooterTop />
-            <FooterBottom />
+
 
           </div>
         </Router>

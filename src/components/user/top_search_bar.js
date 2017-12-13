@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { updateFilter } from '../../actions/filtered';
+import { Link } from 'react-router';
 
 
 class TopSearchBar extends Component {
