@@ -1,9 +1,10 @@
-import { UPDATE_FILTER } from '../actions/filter';
+import { UPDATE_FILTER } from '../actions/filtered';
 
 export default (state = {}, action) => {
   switch (action.type) {
     case UPDATE_FILTER:
-      return action.filterData;
+    console.log('objassign', {...action.filterData})
+      return {...action.filterData};
     default:
       return state;
   }

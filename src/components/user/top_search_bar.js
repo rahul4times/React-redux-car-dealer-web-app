@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { updateFilter } from '../../actions/filter';
+import { updateFilter } from '../../actions/filtered';
 class TopSearchBar extends Component {
   state = {
     make: '',
@@ -56,7 +56,7 @@ class TopSearchBar extends Component {
                     value={this.state.make}
                     onChange={(e)=>this.setState({make: e.target.value})}
                   >
-                  <option defaultValue>Make</option>
+                  <option value="" disabled selected>Make</option>
                     {makes}
                 </select>
               </div>
@@ -65,7 +65,7 @@ class TopSearchBar extends Component {
                   value={this.state.body}
                   onChange={(e)=>this.setState({body: e.target.value})}
                   >
-                    <option defaultValue>Body Type</option>
+                    <option value="" disabled selected>Body Type</option>
                     { makes ? body : null }
                   </select>
               </div>
@@ -74,7 +74,7 @@ class TopSearchBar extends Component {
                   value={this.state.priceRange}
                   onChange={(e)=>this.setState({priceRange: e.target.value})}
                   >
-                    <option defaultValue>Price</option>
+                    <option value="" disabled selected>Price</option>
                     <option value="lowHigh">Low To High</option>
                     <option value="highLow">High To Low</option>
                   </select>

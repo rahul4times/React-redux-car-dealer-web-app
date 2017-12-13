@@ -5,7 +5,7 @@ import Car from './car';
 class CarsList extends Component {
 
   render(){
-    console.log('test: ', this.props);
+    console.log('Test on Cars: ', this.props.cars);
     let carList = this.props.cars ? this.props.cars.map(car => {
       return(
         <div key={car.id} className="col-12">
@@ -25,14 +25,23 @@ class CarsList extends Component {
 }
 
 function mapStateToProps(state, props){
+  console.log('filtered state within cars list: ',state.filtered)
+  var filtered = state.cars
 
-
+  if(state.filtered.make){
+    filtered = filtered.filter(car => car.make == state.filtered.make)
+  }
+  if(state.filtered.body){
+    filtered = filtered.filter(car => car.body_type == state.filtered.body)
+  }
+    filtered = filtered.sort((car1, car2) => state.filtered.priceRange === "lowHigh" ? car1.price - car2.price : car2.price - car1.price)
 
 
   return {
 
     filtered: state.filtered,
-    cars: state.filtered ? state.cars.find(car => car.make ==  state.filtered.make || car.model == state.filtered.model) : state.cars
+
+    cars: filtered
   }
 
 
