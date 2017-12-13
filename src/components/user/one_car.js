@@ -9,9 +9,15 @@ import { facebook } from 'react-icons-kit/fa/facebook';
 import { twitter } from 'react-icons-kit/fa/twitter';
 import { instagram } from 'react-icons-kit/fa/instagram';
 import { Button, Form, FormGroup, Input } from 'reactstrap';
+import { bindActionCreators } from 'redux';
+
+import ContactForm from './contact';
 
 
 class OneCar extends Component {
+
+
+
   render(){
     console.log('one car page: ', this.props);
     let id = this.props.car ? this.props.car.id : null;
@@ -159,43 +165,8 @@ class OneCar extends Component {
             <div className="card border-success">
               <div className="card-header text-success">Get ePrice or Schedule Test Drive</div>
                 <div className="card-body text-success">
-                  <Form>
-                  <div className="row">
-                    <div className="col-3">
-                      <FormGroup>
-                        <Input type="text" name="uname" placeholder="Name" />
-                      </FormGroup>
-                    </div>
-                    <div className="col-3">
-                      <FormGroup>
-                        <Input type="email" name="uemail" placeholder="Email" />
-                      </FormGroup>
-                    </div>
-                    <div className="col-3">
-                      <FormGroup>
-                        <Input type="text" name="uphone" placeholder="Phone" />
-                      </FormGroup>
-                    </div>
-                    <div className="col-3">
-                      <FormGroup>
-                        <Input type="text" name="uinterest" value={`STOCK ID: ${id}`} />
-                      </FormGroup>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-10">
-                      <FormGroup>
-                        <Input type="textarea" name="umessage" placeholder="Special Message"/>
-                      </FormGroup>
-                    </div>
-                    <div className="col-2">
-                      <FormGroup>
-                        <button type="submit" class="btn btn-success">Submit</button>
-                      </FormGroup>
-                    </div>
-                  </div>
-                </Form>
-                </div>
+                  <ContactForm id={id}/>
+              </div>
             </div>
             <br/>
           </Col>
