@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getCars } from './actions/cars';
 
-// Components
+// User Components
 import NavigationBar from './components/user/navigation_bar';
 import TopSearchBar from './components/user/top_search_bar';
 import FooterTop from './components/user/footer_top';
@@ -14,6 +14,8 @@ import UserHomePage from './components/user/home';
 import CarsList from './components/user/cars_list';
 import OneCar from './components/user/one_car';
 
+// Admin Components
+import AdminNavigatioBar from './components/admin/admin_top_navigation';
 
 class App extends Component {
 
@@ -27,14 +29,22 @@ class App extends Component {
         <Router>
           <div>
 
-            <NavigationBar />
-            <TopSearchBar />
+
+            {/* <NavigationBar />
+            <TopSearchBar /> */}
 
             <Switch>
+              <Route exact path='/admin/' component={AdminNavigatioBar} />
 
-              <Route exact path='/' component={UserHomePage} />
-              <Route exact path='/cars' component={CarsList} />
-              <Route exact path='/cars/:id' component={OneCar} />
+              <Route path ='/' render={() => (
+                <div>
+                  <NavigationBar />
+                  <TopSearchBar />
+                  <Route exact path='/' component={UserHomePage} />
+                  <Route exact path='/cars' component={CarsList} />
+                  <Route exact path='/cars/:id' component={OneCar} />
+              </div>
+            )} />
 
             </Switch>
 

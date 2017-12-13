@@ -15,7 +15,7 @@ import {
 import Icon from 'react-icons-kit';
 import { car } from 'react-icons-kit/fa/car';
 
-export default class NavigatioBar extends React.Component {
+export default class AdminNavigatioBar extends React.Component {
   constructor(props) {
     super(props);
 
@@ -36,35 +36,29 @@ export default class NavigatioBar extends React.Component {
           <div className="container">
             <NavbarBrand href="/">
             <Icon className="car-icon" icon={car}/>
-             G66 CARS</NavbarBrand>
+             G66 CARS ADMIN</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <NavLink href="/cars">CARS</NavLink>
+                  <NavLink href="/cars">HOME</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/">FINANCE</NavLink>
+                  <NavLink href="/">ADD NEW CAR</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/">SERVICE</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="/">PARTS</NavLink>
+                  <NavLink href="/">MESSAGES</NavLink>
                 </NavItem>
                 <UncontrolledDropdown nav>
                   <DropdownToggle nav caret>
-                    ABOUT
+                    ADMIN
                   </DropdownToggle>
                   <DropdownMenu >
                     <DropdownItem>
-                      ABOUT US
+                      PROFILE
                     </DropdownItem>
                     <DropdownItem>
-                      STAFF
-                    </DropdownItem>
-                    <DropdownItem>
-                      CONTACT US
+                      LOGOUT
                     </DropdownItem>
                   </DropdownMenu>
                 </UncontrolledDropdown>
