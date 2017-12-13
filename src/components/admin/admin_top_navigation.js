@@ -34,20 +34,20 @@ export default class AdminNavigatioBar extends React.Component {
       <div>
         <Navbar color="primary" dark expand="md">
           <div className="container">
-            <NavbarBrand href="/">
+            <NavbarBrand href="/admin/">
             <Icon className="car-icon" icon={car}/>
              G66 CARS ADMIN</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <NavLink href="/cars">HOME</NavLink>
+                  <NavLink href="/admin/">HOME</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/">ADD NEW CAR</NavLink>
+                  <NavLink href="/admin/newcar">ADD NEW CAR</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/">MESSAGES</NavLink>
+                  <NavLink href="/admin/messages">MESSAGES</NavLink>
                 </NavItem>
                 <UncontrolledDropdown nav>
                   <DropdownToggle nav caret>

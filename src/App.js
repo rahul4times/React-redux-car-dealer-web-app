@@ -17,6 +17,8 @@ import OneCar from './components/user/one_car';
 // Admin Components
 import AdminNavigatioBar from './components/admin/admin_top_navigation';
 import Cars from './components/admin/admin_cars';
+import NewCar from './components/admin/newcar';
+import Messages from './components/admin/messages';
 
 class App extends Component {
 
@@ -29,27 +31,19 @@ class App extends Component {
       <div className="App">
         <Router>
           <div>
-
-
-            {/* <NavigationBar />
-            <TopSearchBar /> */}
-
             <Switch>
               <Route path='/admin/' render={() => (
-
                 <div>
-                    <AdminNavigatioBar />
 
-                    <Route exact path='/admin/cars' component={Cars} />
+                  <AdminNavigatioBar />
+                  <Route exact path='/admin/cars' component={Cars} />
+                  <Route exact path='/admin/newcar' component={NewCar} />
+                  <Route exact path='/admin/messages' component={Messages} />
 
                 </div>
-            )} />
-
-
-
+              )} />
 
               <Route path ='/' render={() => (
-
                 <div>
                     <NavigationBar />
                     <TopSearchBar />
@@ -62,9 +56,6 @@ class App extends Component {
             )} />
 
             </Switch>
-
-
-
           </div>
         </Router>
 
