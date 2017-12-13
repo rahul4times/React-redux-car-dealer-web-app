@@ -8,7 +8,7 @@ import { car } from 'react-icons-kit/fa/car';
 import { facebook } from 'react-icons-kit/fa/facebook';
 import { twitter } from 'react-icons-kit/fa/twitter';
 import { instagram } from 'react-icons-kit/fa/instagram';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Input } from 'reactstrap';
 
 
 class OneCar extends Component {
@@ -179,6 +179,18 @@ class OneCar extends Component {
                     <div className="col-3">
                       <FormGroup>
                         <Input type="text" name="uinterest" value={`STOCK ID: ${id}`} />
+                      </FormGroup>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-10">
+                      <FormGroup>
+                        <Input type="textarea" name="umessage" placeholder="Special Message"/>
+                      </FormGroup>
+                    </div>
+                    <div className="col-2">
+                      <FormGroup>
+                        <button type="submit" class="btn btn-success">Submit</button>
                       </FormGroup>
                     </div>
                   </div>
