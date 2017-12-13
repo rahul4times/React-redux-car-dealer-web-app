@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, FormGroup, Input } from 'reactstrap';
+import { Form, FormGroup, Input, Alert, Label } from 'reactstrap';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { sendMessage } from '../../actions/message'
@@ -8,21 +8,26 @@ class ContactForm extends Component {
   state = {
     uname: '',
     uemail: '',
-    uphone: 0,
+    uphone: '',
     uinterest: '',
     umessage: '',
     followup: false,
-    read: false
+    read: false,
+    succMsg: false
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.sendMessage(this.state);
+    this.setState({succMsg: true})
   }
 
-  render(){
+  onDismiss = () => {
+    this.setState({ succMsg: false });
+  }
 
-    var carId = this.props ? this.props.id : null;
+
+  render(){
 
     return(
       <div>
@@ -30,7 +35,8 @@ class ContactForm extends Component {
         <div className="row">
           <div className="col-3">
             <FormGroup>
-              <Input type="text" placeholder="Name"
+              <Label for="examplename">Your Name</Label>
+              <Input type="text" id="examplename"
                 value={this.state.uname}
                 onChange={(e) => this.setState({uname: e.target.value})}
               />
@@ -38,7 +44,8 @@ class ContactForm extends Component {
           </div>
           <div className="col-3">
             <FormGroup>
-              <Input type="email" placeholder="Email"
+              <Label for="exampleEmail">Email</Label>
+              <Input type="email" id="exampleEmail"
                 value={this.state.uemail}
                 onChange={(e) => this.setState({uemail: e.target.value})}
               />
@@ -46,7 +53,8 @@ class ContactForm extends Component {
           </div>
           <div className="col-3">
             <FormGroup>
-              <Input type="text" placeholder="Phone"
+              <Label for="examplephone">Phone</Label>
+              <Input type="text" id="examplephone"
                 value={this.state.uphone}
                 onChange={(e) => this.setState({uphone: e.target.value})}
               />
@@ -54,7 +62,8 @@ class ContactForm extends Component {
           </div>
           <div className="col-3">
             <FormGroup>
-              <Input type="text" value={`STOCK ID: ${carId}`}
+              <Label for="examplecarid">Car ID</Label>
+              <Input type="text" id="examplecarid"
                 value={this.state.uinterest}
                 onChange={(e) => this.setState({uinterest: e.target.value})}
               />
@@ -64,18 +73,27 @@ class ContactForm extends Component {
         <div className="row">
           <div className="col-10">
             <FormGroup>
-              <Input type="textarea" placeholder="Special Message"
+              <Label for="specialmessage">Message</Label>
+              <Input type="textarea" id="specialmessage"
                 value={this.state.umessage}
                 onChange={(e) => this.setState({umessage: e.target.value})}
               />
+            <br/>
             </FormGroup>
           </div>
           <div className="col-2">
+            <br/>
             <FormGroup>
               <button type="submit" class="btn btn-success">Submit</button>
             </FormGroup>
           </div>
         </div>
+        <Alert
+          isOpen={this.state.succMsg}
+          toggle={this.onDismiss}
+          color="success">
+          Message sent successfully. We will get back to you!
+        </Alert>
     </Form>
     </div>
     );
