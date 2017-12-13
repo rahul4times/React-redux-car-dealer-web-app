@@ -8,8 +8,8 @@ import { car } from 'react-icons-kit/fa/car';
 import { facebook } from 'react-icons-kit/fa/facebook';
 import { twitter } from 'react-icons-kit/fa/twitter';
 import { instagram } from 'react-icons-kit/fa/instagram';
-import { Button, Form, FormGroup, Input } from 'reactstrap';
-import { bindActionCreators } from 'redux';
+import { Button } from 'reactstrap';
+
 
 import ContactForm from './contact';
 

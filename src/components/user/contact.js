@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
-import {
-  Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button, Form,
-  FormGroup, Input
-} from 'reactstrap';
+import { Form, FormGroup, Input } from 'reactstrap';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-
+import { sendMessage } from '../../actions/message'
 class ContactForm extends Component {
 
   state = {
@@ -20,14 +16,14 @@ class ContactForm extends Component {
   }
 
   handleSubmit = (e) => {
-    e.preventDefault()
-    this.props.addCar(this.state)
-    //this.props.history.push('/cars/')
+    e.preventDefault();
+    this.props.sendMessage(this.state);
   }
 
   render(){
-    var carId = this.props.id;
-    console.log('car id:',carId);
+
+    var carId = this.props ? this.props.id : null;
+
     return(
       <div>
       <Form onSubmit={this.handleSubmit}>
@@ -51,8 +47,8 @@ class ContactForm extends Component {
           <div className="col-3">
             <FormGroup>
               <Input type="text" placeholder="Phone"
-                value={this.state.phone}
-                onChange={(e) => this.setState({phone: e.target.value})}
+                value={this.state.uphone}
+                onChange={(e) => this.setState({uphone: e.target.value})}
               />
             </FormGroup>
           </div>
@@ -86,12 +82,10 @@ class ContactForm extends Component {
   }
 }
 
-// function mapDispatchToProps(dispatch) {
-//   return {
-//     addCar: bindActionCreators(addCar, dispatch)
-//   }
-// }
-//
-// export default connect(null, mapDispatchToProps)(ContactForm)
+function mapDispatchToProps(dispatch) {
+  return {
+    sendMessage: bindActionCreators(sendMessage, dispatch)
+  }
+}
 
-export default ContactForm;
+export default connect(null, mapDispatchToProps)(ContactForm);
