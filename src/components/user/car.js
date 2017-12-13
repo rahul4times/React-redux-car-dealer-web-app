@@ -14,7 +14,7 @@ const Car = ({car}) => {
           </Col>
           <Col md="5">
             <Link to={`/cars/${car.id}`}>
-              <CardTitle className="title"><h3>{car.year} {car.make} {car.model} {car.trim}</h3></CardTitle>
+              <CardTitle className="title">{car.year} {car.make} {car.model} {car.trim}</CardTitle>
             </Link>
             <CardSubtitle className="subtitle">Stock No: #{car.id}</CardSubtitle>
             <CardBody>

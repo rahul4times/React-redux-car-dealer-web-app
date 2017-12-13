@@ -5,14 +5,14 @@ import Car from './car';
 class CarsList extends Component {
 
   render(){
-    let carList = this.props.cars.map(car => {
+    console.log('test: ', this.props);
+    let carList = this.props.cars ? this.props.cars.map(car => {
       return(
-        <div className="col-12">
+        <div key={car.id} className="col-12">
           <Car key={car.id} car={car} />
         </div>
       )
-    })
-
+    }) : null;
 
     return(
       <div className="container">
@@ -25,10 +25,17 @@ class CarsList extends Component {
 }
 
 function mapStateToProps(state, props){
-  return{
-    cars: state.cars,
-    filter: state.filter
+
+
+
+
+  return {
+
+    filtered: state.filtered,
+    cars: state.filtered ? state.cars.find(car => car.make ==  state.filtered.make || car.model == state.filtered.model) : state.cars
   }
+
+
 }
 
 export default connect(mapStateToProps, null)(CarsList);
