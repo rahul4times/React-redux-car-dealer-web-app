@@ -15,8 +15,6 @@ class TopSearchBar extends Component {
 
   render(){
 
-    console.log('local state: ', this.state);
-
     let searchMake = ["Audi","Honda","Lamborghini","Maserati", "Subaru","Toyota"];
 
     let cars = {
