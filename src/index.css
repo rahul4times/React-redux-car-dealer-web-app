@@ -45,10 +45,10 @@ body {
 .carlist-table{
   font-size: 14px;
 }
-.table th, .table td {
+/* .table th, .table td {
   padding: 0;
   border: none;
-}
+} */
 .price{
   font-size: 18px;
   text-align: right;

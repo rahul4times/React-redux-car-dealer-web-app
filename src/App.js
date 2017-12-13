@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getCars } from './actions/cars';
@@ -36,7 +35,7 @@ class App extends Component {
                 <div>
 
                   <AdminNavigatioBar />
-                  <Route exact path='/admin/cars' component={Cars} />
+                  <Route exact path='/admin/' component={Cars} />
                   <Route exact path='/admin/newcar' component={NewCar} />
                   <Route exact path='/admin/messages' component={Messages} />
 
