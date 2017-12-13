@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Alert, Table } from 'reactstrap';
+import { Alert, Table, Button } from 'reactstrap';
 import { connect } from 'react-redux';
 
 class Messages extends Component {
@@ -12,9 +12,11 @@ class Messages extends Component {
           <td>{message.uname}</td>
           <td>{message.uphone}</td>
           <td>{message.uemail}</td>
-          <td>{message.umessage}</td>
-          <td>{message.followup ? "Yes" : "No"}</td>
-          <td>Delete</td>
+          <td>{message.umessage.substring(0, 30)}</td>
+          <td>{message.uinterest}</td>
+          <td>
+            <button type="button" className="btn btn-outline-danger btn-sm">Delete</button>
+          </td>
         </tr>
       )
     }) : null;
@@ -32,7 +34,7 @@ class Messages extends Component {
                   <th>PHONE</th>
                   <th>EMAIL</th>
                   <th>MESSAGE</th>
-                  <th>FOLLOWUP</th>
+                  <th>INTEREST</th>
                   <th>DELETE</th>
                 </tr>
               </thead>
