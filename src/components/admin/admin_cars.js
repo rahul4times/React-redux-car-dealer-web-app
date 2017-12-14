@@ -32,7 +32,9 @@ class Cars extends Component {
               <Icon icon={pencil} />
             </Link>
           </td>
-          <td><Icon icon={bin}
+          <td><Icon
+            className="text-danger"
+            icon={bin}
             onClick={(e)=>this.handleDelete(car.id)}
           /></td>
         </tr>

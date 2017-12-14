@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Table, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
+import { Row, Col} from 'reactstrap';
 import { connect } from 'react-redux';
 import { deleteMsg } from '../../actions/message';
 import Icon from 'react-icons-kit';
@@ -51,12 +51,16 @@ class Messages extends Component {
               {message.umessage ? message.umessage.substring(0, 50) : null}
             </Col>
             <Col md="1">
-              <Icon  icon={enlarge}
+              <Icon
+                className="text-success"
+                icon={enlarge}
                 onClick={(e) => this.enlargeMessage(message)}
               />
             </Col>
             <Col md="1">
-              <Icon icon={bin}
+              <Icon
+                className="text-danger"
+                icon={bin}
                 onClick={(e)=>this.handleDelete(message.id)}
               />
             </Col>

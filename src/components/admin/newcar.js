@@ -3,6 +3,7 @@ import { Form, FormGroup, Label, Input, Row, Col, Alert } from 'reactstrap';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createCar } from '../../actions/cars';
+import { Link } from 'react-router-dom';
 
 class NewCar extends Component {
 
@@ -336,7 +337,7 @@ class NewCar extends Component {
                 </Col>
               </Row>
               <Row>
-                <Col md="9">
+                <Col md="10">
                   <FormGroup>
                     <Alert
                       isOpen={this.state.alertMsg}
@@ -346,9 +347,16 @@ class NewCar extends Component {
                     </Alert>
                   </FormGroup>
                 </Col>
-                <Col md="3">
+                <Col md="1">
                   <FormGroup>
                     <button type="submit" className="btn btn-success">Create</button>
+                  </FormGroup>
+                </Col>
+                <Col md="1">
+                  <FormGroup>
+                    <Link to={`/admin/`}>
+                      <button type="button" className="btn btn-danger">Cancel</button>
+                    </Link>
                   </FormGroup>
                 </Col>
               </Row>
