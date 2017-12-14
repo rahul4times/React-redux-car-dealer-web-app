@@ -19,6 +19,7 @@ import AdminNavigatioBar from './components/admin/admin_top_navigation';
 import Cars from './components/admin/admin_cars';
 import NewCar from './components/admin/newcar';
 import Messages from './components/admin/messages';
+import EditCar from './components/admin/edit_car';
 
 class App extends Component {
 
@@ -39,6 +40,7 @@ class App extends Component {
                   <AdminNavigatioBar />
                   <Route exact path='/admin/' component={Cars} />
                   <Route exact path='/admin/newcar' component={NewCar} />
+                  <Route exact path='/admin/editcar/:id' component={EditCar} />
                   <Route exact path='/admin/messages' component={Messages} />
 
                 </div>

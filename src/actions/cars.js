@@ -30,3 +30,14 @@ export const createCar = (newCar) => {
     })
   }
 }
+
+export const editCar = (carId, editedCar) => {
+  return async (dispatch) => {
+    dispatch({ type: EDIT_CAR_PENDING })
+    let updatedcar = await axios.patch(`http://localhost:8000/car/${carId}`, editedCar)
+    dispatch({
+      type: EDIT_CAR_SUCCESS,
+      payload: updatedcar
+    })
+  }
+}

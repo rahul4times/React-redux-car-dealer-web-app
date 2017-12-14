@@ -4,12 +4,11 @@ import { connect } from 'react-redux';
 import Icon from 'react-icons-kit';
 import { bin } from 'react-icons-kit/icomoon';
 import { pencil } from 'react-icons-kit/icomoon';
+import { Link } from 'react-router-dom';
 
 class Cars extends Component {
+
   render(){
-
-    console.log('admin dashboard: ', this.props.cars);
-
     let inventory = this.props.cars ? this.props.cars.map(car => {
       return(
         <tr>
@@ -21,7 +20,11 @@ class Cars extends Component {
           <td>{car.int_color}</td>
           <td>{car.price}</td>
           <td>{car.status ? "Available" : "Sold"}</td>
-          <td><Icon icon={pencil} /></td>
+          <td>
+            <Link to={`/admin/editcar/${car.id}`}>
+              <Icon icon={pencil} />
+            </Link>
+          </td>
           <td><Icon icon={bin} /></td>
         </tr>
       )
