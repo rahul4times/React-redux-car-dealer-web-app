@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Table } from 'reactstrap';
 import { connect } from 'react-redux';
-
+import Icon from 'react-icons-kit';
+import { bin } from 'react-icons-kit/icomoon';
+import { pencil } from 'react-icons-kit/icomoon';
 
 class Cars extends Component {
   render(){
@@ -18,9 +20,9 @@ class Cars extends Component {
           <td>{car.body_type}</td>
           <td>{car.int_color}</td>
           <td>{car.price}</td>
-          <td>{car.sale}</td>
           <td>{car.status ? "Available" : "Sold"}</td>
-          <td>Edit | Delete</td>
+          <td><Icon icon={pencil} /></td>
+          <td><Icon icon={bin} /></td>
         </tr>
       )
     }) : null;
@@ -41,9 +43,9 @@ class Cars extends Component {
                 <th>BODY</th>
                 <th>COLOR</th>
                 <th>PRICE</th>
-                <th>SALE</th>
                 <th>STATUS</th>
-                <th>ACTION</th>
+                <th>EDIT</th>
+                <th>DELETE</th>
               </tr>
             </thead>
             <tbody>

@@ -4,6 +4,8 @@ export const GET_MESSAGES_PENDING = 'GET_MESSAGES_PENDING'
 export const GET_MESSAGES_SUCCESS = 'GET_MESSAGES_SUCCESS'
 export const SEND_MESSAGE_PENDING = 'SEND_MESSAGE_PENDING'
 export const SEND_MESSAGE_SUCCESS = 'SEND_MESSAGE_SUCCESS'
+export const REMOVE_MESSAGE_PENDING = 'REMOVE_MESSAGE_PENDING'
+export const REMOVE_MESSAGE_SUCCESS = 'REMOVE_MESSAGE_SUCCESS'
 
 export const getMessages = () => {
   return async (dispatch) => {
@@ -23,6 +25,17 @@ export const sendMessage = (privateMessage) => {
     dispatch({
       type: SEND_MESSAGE_SUCCESS,
       payload: message
+    })
+  }
+}
+
+export const deleteMsg = (msgId) => {
+  return async (dispatch) => {
+    dispatch({ type: REMOVE_MESSAGE_PENDING })
+    let deletemsg = await axios.delete(`http://localhost:8000/messages/${msgId}`)
+    dispatch({
+      type: REMOVE_MESSAGE_SUCCESS,
+      payload: deletemsg
     })
   }
 }

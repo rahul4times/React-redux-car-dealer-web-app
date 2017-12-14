@@ -1,21 +1,33 @@
 import React, { Component } from 'react';
 import { Table} from 'reactstrap';
 import { connect } from 'react-redux';
+import { deleteMsg } from '../../actions/message';
+import Icon from 'react-icons-kit';
+import { bin } from 'react-icons-kit/icomoon';
+import { enlarge } from 'react-icons-kit/icomoon';
 
 class Messages extends Component {
 
+  handleDelete = (id) => {
+    console.log("id is: ", id);
+    this.props.deleteMsg(id);
+    this.props.history.push('/admin/messages');
+  }
+
   render(){
-    console.log('messages on admin page: ', this.props.messages);
+    console.log('props here: ', this.props);
     let messagesList = this.props.messages ? this.props.messages.map(message => {
       return(
         <tr>
           <td>{message.uname}</td>
           <td>{message.uphone}</td>
-          <td>{message.uemail}</td>
-          <td>{message.umessage.substring(0, 30)}</td>
-          <td>{message.uinterest}</td>
+          <td>{message.umessage ? message.umessage.substring(0, 50) : null}</td>
+          <td><Icon  icon={enlarge} /></td>
           <td>
-            <button type="button" className="btn btn-outline-danger btn-sm">Delete</button>
+            <Icon icon={bin}
+              onClick={(e)=>this.handleDelete(message.id)}
+            />
+
           </td>
         </tr>
       )
@@ -32,9 +44,8 @@ class Messages extends Component {
                 <tr>
                   <th>NAME</th>
                   <th>PHONE</th>
-                  <th>EMAIL</th>
                   <th>MESSAGE</th>
-                  <th>INTEREST</th>
+                  <th>VIEW</th>
                   <th>DELETE</th>
                 </tr>
               </thead>
@@ -55,4 +66,4 @@ function mapStateToProps(state, props){
   }
 }
 
-export default connect(mapStateToProps, null)(Messages);
+export default connect(mapStateToProps, {deleteMsg})(Messages);
