@@ -37,7 +37,8 @@ class NewCar extends Component {
     e.preventDefault();
     this.props.createCar(this.state);
     this.setState({
-      alertMsg: true, year: '',
+      alertMsg: true,
+      year: '',
       make: '',
       model: '',
       trim: '',
@@ -68,7 +69,7 @@ class NewCar extends Component {
   }
 
   render() {
-    
+
     return (
       <div className="container">
         <br/>
@@ -84,11 +85,8 @@ class NewCar extends Component {
                       value={this.state.year}
                       onChange={(e) => this.setState({year: e.target.value})}
                       >
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
+                      <option value="" disabled selected>Select Year</option>
+                      <option>2018</option>
                     </Input>
                   </FormGroup>
                 </Col>
@@ -99,11 +97,13 @@ class NewCar extends Component {
                       value={this.state.make}
                       onChange={(e) => this.setState({make: e.target.value})}
                       >
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
+                      <option value="" disabled selected>Select Make</option>
+                      <option>Audi</option>
+                      <option>Honda</option>
+                      <option>Lamborghini</option>
+                      <option>Maserati</option>
+                      <option>Subaru</option>
+                      <option>Toyota</option>
                     </Input>
                   </FormGroup>
                 </Col>
@@ -114,11 +114,21 @@ class NewCar extends Component {
                       value={this.state.model}
                       onChange={(e) => this.setState({model: e.target.value})}
                       >
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
+                      <option value="" disabled selected>Select Model</option>
+                      <option>Accord</option>
+                      <option>Odyssey</option>
+                      <option>CR-V</option>
+                      <option>4 Runner</option>
+                      <option>Avalon</option>
+                      <option>Tocoma</option>
+                      <option>C-Class</option>
+                      <option>A3</option>
+                      <option>Q3</option>
+                      <option>A5</option>
+                      <option>Gran Turismo</option>
+                      <option>Levante</option>
+                      <option>Aventador</option>
+                      <option>Outback</option>
                     </Input>
                   </FormGroup>
                 </Col>
@@ -129,11 +139,14 @@ class NewCar extends Component {
                       value={this.state.body_type}
                       onChange={(e) => this.setState({body_type: e.target.value})}
                       >
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
+                      <option value="" disabled selected >Select Body</option>
+                      <option>Convertible</option>
+                      <option>Coupe</option>
+                      <option>Hatchback</option>
+                      <option>Sedan</option>
+                      <option>SUV</option>
+                      <option>Truck</option>
+                      <option>Van</option>
                     </Input>
                   </FormGroup>
                 </Col>
