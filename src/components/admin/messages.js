@@ -1,12 +1,36 @@
 import React, { Component } from 'react';
-import { Table} from 'reactstrap';
+import { Table, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
 import { connect } from 'react-redux';
 import { deleteMsg } from '../../actions/message';
 import Icon from 'react-icons-kit';
 import { bin } from 'react-icons-kit/icomoon';
 import { enlarge } from 'react-icons-kit/icomoon';
+import MessageWindow from './message_window';
 
 class Messages extends Component {
+
+  state ={
+    show: false,
+      id:'',
+      uname:'',
+      uemail:'',
+      uphone:'',
+      uinterest:'',
+      umessage:''
+  }
+
+  enlargeMessage = (message) => {
+    let show = this.state.show;
+    this.setState({
+      show: !show,
+      id: message.id,
+      uname: message.uname,
+      uemail: message.uemail,
+      uphone: message.uphone,
+      uinterest: message.uinterest,
+      umessage: message.umessage
+     });
+  }
 
   handleDelete = (id) => {
     console.log("id is: ", id);
@@ -15,46 +39,48 @@ class Messages extends Component {
   }
 
   render(){
-    console.log('props here: ', this.props);
+
     let messagesList = this.props.messages ? this.props.messages.map(message => {
       return(
-        <tr>
-          <td>{message.uname}</td>
-          <td>{message.uphone}</td>
-          <td>{message.umessage ? message.umessage.substring(0, 50) : null}</td>
-          <td><Icon  icon={enlarge} /></td>
-          <td>
-            <Icon icon={bin}
-              onClick={(e)=>this.handleDelete(message.id)}
-            />
-
-          </td>
-        </tr>
+        <div>
+          <Row>
+            <Col md="4">
+              {message.uname}
+            </Col>
+            <Col md="6">
+              {message.umessage ? message.umessage.substring(0, 50) : null}
+            </Col>
+            <Col md="1">
+              <Icon  icon={enlarge}
+                onClick={(e) => this.enlargeMessage(message)}
+              />
+            </Col>
+            <Col md="1">
+              <Icon icon={bin}
+                onClick={(e)=>this.handleDelete(message.id)}
+              />
+            </Col>
+          </Row>
+        </div>
       )
     }) : null;
 
     return(
       <div className="container">
         <br/>
-        <div className="card border-primary mb-3">
-        <div className="card-header text-white bg-primary">Messages</div>
-          <div className="card-body text-primary">
-            <Table hover>
-              <thead className="text-success">
-                <tr>
-                  <th>NAME</th>
-                  <th>PHONE</th>
-                  <th>MESSAGE</th>
-                  <th>VIEW</th>
-                  <th>DELETE</th>
-                </tr>
-              </thead>
-              <tbody>
+        <Row>
+          <Col md="7">
+            <div className="card border-primary mb-3">
+            <div className="card-header text-white bg-primary">Messages</div>
+              <div className="card-body text-primary">
                 {messagesList}
-              </tbody>
-            </Table>
-          </div>
-        </div>
+              </div>
+            </div>
+          </Col>
+          <Col md="5">
+            {this.state.show ? <MessageWindow message={this.state}/> : null}
+          </Col>
+        </Row>
       </div>
     );
   }
