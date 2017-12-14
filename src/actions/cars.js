@@ -19,3 +19,14 @@ export const getCars = () => {
     })
   }
 }
+
+export const createCar = (newCar) => {
+  return async (dispatch) => {
+    dispatch({ type: ADD_CAR_PENDING })
+    let newcar = await axios.post('http://localhost:8000/car', newCar)
+    dispatch({
+      type: ADD_CAR_SUCCESS,
+      payload: newcar
+    })
+  }
+}

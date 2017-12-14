@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Form, FormGroup, Label, Input, Row, Col } from 'reactstrap';
+import { Form, FormGroup, Label, Input, Row, Col, Alert } from 'reactstrap';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { createCar } from '../../actions/cars'
+import { createCar } from '../../actions/cars';
 
 class NewCar extends Component {
 
@@ -30,17 +30,45 @@ class NewCar extends Component {
   	tire_pressure: '',
   	wiper: '',
   	headlight: '',
+    alertMsg: false
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.createCar(this.state);
-    // this.setState({
-    //   alertMsg: true, uname:'', uemail:'', uphone:'', uinterest:'', umessage:''
-    // })
+    this.setState({
+      alertMsg: true, year: '',
+      make: '',
+      model: '',
+      trim: '',
+      engine: '',
+      drive_type: '',
+      body_type: '',
+      ext_color: '',
+      int_color: '',
+      transmission: '',
+      price: 0,
+      sale: 0,
+      status: true,
+      vin: '',
+      link: '',
+      elect_stab: '',
+    	wireless: '',
+    	seat: '',
+    	keyless: '',
+    	trip_comp: '',
+    	tire_pressure: '',
+    	wiper: '',
+    	headlight: ''
+    })
+  }
+
+  alertMsgClose = () => {
+    this.setState({ alertMsg: false });
   }
 
   render() {
+    
     return (
       <div className="container">
         <br/>
@@ -295,9 +323,19 @@ class NewCar extends Component {
                 </Col>
               </Row>
               <Row>
+                <Col md="9">
+                  <FormGroup>
+                    <Alert
+                      isOpen={this.state.alertMsg}
+                      toggle={this.alertMsgClose}
+                      color="success">
+                      Car saved!
+                    </Alert>
+                  </FormGroup>
+                </Col>
                 <Col md="3">
                   <FormGroup>
-                    <button type="button" className="btn btn-success">Create</button>
+                    <button type="submit" className="btn btn-success">Create</button>
                   </FormGroup>
                 </Col>
               </Row>
