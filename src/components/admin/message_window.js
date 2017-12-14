@@ -6,10 +6,15 @@ class MessageWindow extends Component{
   render(){
     return(
         <div className="card border-primary mb-3">
-        <div className="card-header">Header</div>
+        <div className="card-header">Message</div>
         <div className="card-body text-primary">
-          <h4 className="card-title">Primary card title</h4>
-          <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h4 className="card-title">From: {this.props.message.uname}</h4>
+          <p className="card-text">Phone: {this.props.message.uphone}</p>
+          <p className="card-text">Email: {this.props.message.uemail}</p>
+          <p className="card-text">Interest: {this.props.message.uinterest}</p>
+          <hr/>
+          <p className="card-text">Message:</p>
+          <p className="card-text">Message: {this.props.message.umessage}</p>
         </div>
       </div>
 
