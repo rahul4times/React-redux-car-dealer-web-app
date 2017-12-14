@@ -10,9 +10,9 @@ class EditCar extends Component{
     year: ''
   }
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    this.props.editCar(this.state);
+  handleSubmit = (id) => {
+
+    this.props.editCar(id, this.state);
     this.setState({
       year: ''
 
@@ -21,14 +21,17 @@ class EditCar extends Component{
 
   render(){
     console.log('edit car page: ', this.props.car);
+
+    let yearTur = this.props.car ? this.props.car.year : "No Year"
+
     return(
       <div className="container">
-        <Form onSubmit={this.handleSubmit}>
+        <Form onSubmit={(e)=>this.handleSubmit(this.props.car.id)}>
           <FormGroup>
             <Label for="trim">year</Label>
             <Input type="text" id="trim"
-              value={this.props.car.year}
-              onChange={(e) => this.setState({year: e.target.value})}
+              value={yearTur}
+              onChange={(e) => this.setState({ year: e.target.value })}
             />
           </FormGroup>
           <br/>
@@ -41,7 +44,7 @@ class EditCar extends Component{
 
 function mapStateToProps(state, props){
   return{
-    car: state.cars.filter(car => car.id == props.match.params.id)
+    car: state.cars.filter(car => car.id == props.match.params.id)[0]
   }
 }
 
@@ -52,4 +55,4 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-export default connect(mapStateToProps, (mapDispatchToProps, {editCar}))(EditCar);
+export default connect(mapStateToProps, mapDispatchToProps)(EditCar);
