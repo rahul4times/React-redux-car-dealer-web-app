@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Alert, Table, Button } from 'reactstrap';
+import { Table} from 'reactstrap';
 import { connect } from 'react-redux';
 
 class Messages extends Component {
