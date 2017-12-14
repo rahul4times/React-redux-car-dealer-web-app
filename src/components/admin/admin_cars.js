@@ -9,6 +9,12 @@ import { Link } from 'react-router-dom';
 
 class Cars extends Component {
 
+  handleDelete = (id) => {
+    console.log("delete car id: ", id);
+    this.props.deleteCar(id);
+    //this.props.history.push('/admin/messages');
+  }
+
   render(){
     let inventory = this.props.cars ? this.props.cars.map(car => {
       return(
@@ -26,7 +32,9 @@ class Cars extends Component {
               <Icon icon={pencil} />
             </Link>
           </td>
-          <td><Icon icon={bin} /></td>
+          <td><Icon icon={bin}
+            onClick={(e)=>this.handleDelete(car.id)}
+          /></td>
         </tr>
       )
     }) : null;
@@ -69,4 +77,4 @@ function mapStateToProps(state, props){
   }
 }
 
-export default connect(mapStateToProps, null)(Cars);
+export default connect(mapStateToProps, {deleteCar})(Cars);
