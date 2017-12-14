@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Container, Row, Col } from 'reactstrap';
-import Img from 'react-image'
+import Img from 'react-image';
 import { Table } from 'reactstrap';
 import Icon from 'react-icons-kit';
 import { car } from 'react-icons-kit/fa/car';

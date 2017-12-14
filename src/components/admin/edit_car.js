@@ -2,27 +2,21 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { editCar } from '../../actions/cars';
-import { Button, Form, FormGroup, Label, Input, FormText, Row, Col, Alert } from 'reactstrap';
+import { Form, FormGroup, Label, Row, Col, Alert } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { Field, reduxForm } from 'redux-form'
+import { Field, reduxForm } from 'redux-form';
+import Img from 'react-image';
 
 class EditCar extends Component{
 
-  //state = { alertMsg: false }
-
-  // alertMsgClose = () => {
-  //   this.setState({ alertMsg: false });
-  // }
-
   updateOneCar = (values) => {
-    console.log('VALUES', values)
     this.props.editCar(values);
-    //this.setState({ alertMsg: true });
   }
 
   render(){
-    let id = this.props.initialValues ? this.props.initialValues.id : null;
-    console.log('id: ');
+
+    let image = this.props.initialValues ? this.props.initialValues.link : null;
+
     return(
 
       <div className="container">
@@ -34,29 +28,35 @@ class EditCar extends Component{
               onSubmit={this.props.handleSubmit(this.updateOneCar)}
               >
               <Row>
+                <Col md="12">
+                  <Img className="admin-car-image" src={image} />
+                </Col>
+                <br/>
+              </Row>
+              <Row>
                 <Col md="3">
                   <FormGroup>
-                    <Label for="year">Year</Label>
-                    <Field name="year" component="input" type="text" />
+                    <Label for="year">Year</Label><br/>
+                    <Field name="year" id="year" component="input" type="text" />
                   </FormGroup>
                 </Col>
                 <Col md="3">
                   <FormGroup>
-                    <Label for="make">Make</Label>
+                    <Label for="make">Make</Label><br/>
                     <Field name="make" component="input" type="text" />
 
                   </FormGroup>
                 </Col>
                 <Col md="3">
                   <FormGroup>
-                    <Label for="model">Model</Label>
+                    <Label for="model">Model</Label><br/>
                     <Field name="model" component="input" type="text" />
 
                   </FormGroup>
                 </Col>
                 <Col md="3">
                   <FormGroup>
-                    <Label for="body">Body</Label>
+                    <Label for="body">Body</Label><br/>
                     <Field name="body_type" component="input" type="text" />
 
                   </FormGroup>
@@ -65,28 +65,28 @@ class EditCar extends Component{
               <Row>
                 <Col md="3">
                   <FormGroup>
-                    <Label for="trim">Trim</Label>
+                    <Label for="trim">Trim</Label><br/>
                     <Field name="trim" component="input" type="text" />
 
                   </FormGroup>
                 </Col>
                 <Col md="3">
                   <FormGroup>
-                    <Label for="engine">Engine</Label>
+                    <Label for="engine">Engine</Label><br/>
                     <Field name="engine" component="input" type="text" />
 
                   </FormGroup>
                 </Col>
                 <Col md="3">
                   <FormGroup>
-                    <Label for="drivetype">Drive Type</Label>
+                    <Label for="drivetype">Drive Type</Label><br/>
                     <Field name="drive_type" component="input" type="text" />
 
                   </FormGroup>
                 </Col>
                 <Col md="3">
                   <FormGroup>
-                    <Label for="Exteriorcolor">Exterior Color</Label>
+                    <Label for="Exteriorcolor">Exterior Color</Label><br/>
                     <Field name="ext_color" component="input" type="text" />
 
                   </FormGroup>
@@ -95,28 +95,28 @@ class EditCar extends Component{
               <Row>
                 <Col md="3">
                   <FormGroup>
-                    <Label for="intcolor">Interior Color</Label>
+                    <Label for="intcolor">Interior Color</Label><br/>
                     <Field name="int_color" component="input" type="text" />
 
                   </FormGroup>
                 </Col>
                 <Col md="3">
                   <FormGroup>
-                    <Label for="transmission">Transmission</Label>
+                    <Label for="transmission">Transmission</Label><br/>
                     <Field name="transmission" component="input" type="text" />
 
                   </FormGroup>
                 </Col>
                 <Col md="3">
                   <FormGroup>
-                    <Label for="Price">Price</Label>
+                    <Label for="Price">Price</Label><br/>
                     <Field name="price" component="input" type="text" />
 
                   </FormGroup>
                 </Col>
                 <Col md="3">
                   <FormGroup>
-                    <Label for="sale">Sale</Label>
+                    <Label for="sale">Sale</Label><br/>
                     <Field name="sale" component="input" type="text" />
 
                   </FormGroup>
@@ -125,28 +125,28 @@ class EditCar extends Component{
               <Row>
                 <Col md="3">
                   <FormGroup>
-                    <Label for="status">Status</Label>
+                    <Label for="status">Status</Label><br/>
                     <Field name="status" component="input" type="text" />
 
                   </FormGroup>
                 </Col>
                 <Col md="3">
                   <FormGroup>
-                    <Label for="vin">VIN</Label>
+                    <Label for="vin">VIN</Label><br/>
                     <Field name="vin" component="input" type="text" />
 
                   </FormGroup>
                 </Col>
                 <Col md="3">
                   <FormGroup>
-                    <Label for="link">Image Link</Label>
+                    <Label for="link">Image Link</Label><br/>
                     <Field name="link" component="input" type="text" />
 
                   </FormGroup>
                 </Col>
                 <Col md="3">
                   <FormGroup>
-                    <Label for="electstab">Electronic stability</Label>
+                    <Label for="electstab">Electronic stability</Label><br/>
                     <Field name="elect_stab" component="input" type="text" />
 
                   </FormGroup>
@@ -155,28 +155,28 @@ class EditCar extends Component{
               <Row>
                 <Col md="3">
                   <FormGroup>
-                    <Label for="wireless">Wireless phone connectivity</Label>
+                    <Label for="wireless">Wireless phone connectivity</Label><br/>
                     <Field name="wireless" component="input" type="text" />
 
                   </FormGroup>
                 </Col>
                 <Col md="3">
                   <FormGroup>
-                    <Label for="split">Split folding rear seat</Label>
+                    <Label for="split">Split folding rear seat</Label><br/>
                     <Field name="seat" component="input" type="text" />
 
                   </FormGroup>
                 </Col>
                 <Col md="3">
                   <FormGroup>
-                    <Label for="remote">Remote keyless entry</Label>
+                    <Label for="remote">Remote keyless entry</Label><br/>
                     <Field name="keyless" component="input" type="text" />
 
                   </FormGroup>
                 </Col>
                 <Col md="3">
                   <FormGroup>
-                    <Label for="trip">Trip computer</Label>
+                    <Label for="trip">Trip computer</Label><br/>
                     <Field name="trip_comp" component="input" type="text" />
 
                   </FormGroup>
@@ -185,21 +185,21 @@ class EditCar extends Component{
               <Row>
                 <Col md="3">
                   <FormGroup>
-                    <Label for="low">Low tire pressure warning</Label>
+                    <Label for="low">Low tire pressure warning</Label><br/>
                     <Field name="tire_pressure" component="input" type="text" />
 
                   </FormGroup>
                 </Col>
                 <Col md="3">
                   <FormGroup>
-                    <Label for="wiper">Rear window wiper</Label>
+                    <Label for="wiper">Rear window wiper</Label><br/>
                     <Field name="wiper" component="input" type="text" />
 
                   </FormGroup>
                 </Col>
                 <Col md="3">
                   <FormGroup>
-                    <Label for="headlight">Fully automatic headlights</Label>
+                    <Label for="headlight">Fully automatic headlights</Label><br/>
                     <Field name="headlight" component="input" type="text" />
 
                   </FormGroup>
@@ -210,14 +210,7 @@ class EditCar extends Component{
               </Row>
               <Row>
                 <Col md="10">
-                  <FormGroup>
-                    {/* <Alert
-                      isOpen={this.state.alertMsg}
-                      toggle={this.alertMsgClose}
-                      color="success">
-                      Car saved!
-                    </Alert> */}
-                  </FormGroup>
+
                 </Col>
                 <Col md="1">
                   <FormGroup>
@@ -253,10 +246,6 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-EditCar = reduxForm({
-  // a unique name for the form
-  form: 'edit_car'
-})(EditCar)
-
+EditCar = reduxForm({ form: 'edit_car' })(EditCar)
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditCar);

@@ -80,3 +80,8 @@ body {
   font-size: 10px;
   line-height: 2px;
 }
+.admin-car-image{
+  width: 400px;
+  height: auto;
+  border-radius: 5px;
+}

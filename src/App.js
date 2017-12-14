@@ -46,10 +46,10 @@ class App extends Component {
                 </div>
               )} />
 
-              <Route path ='/' render={() => (
+              <Route path ='/' render={(props) => (
                 <div>
                     <NavigationBar />
-                    <TopSearchBar />
+                    <TopSearchBar {...props}/>
                     <Route exact path='/' component={UserHomePage} />
                     <Route exact path='/cars' component={CarsList} />
                     <Route exact path='/cars/:id' component={OneCar} />

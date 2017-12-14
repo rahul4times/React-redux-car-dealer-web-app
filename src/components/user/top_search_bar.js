@@ -14,6 +14,7 @@ class TopSearchBar extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.updateFilter(this.state);
+    this.props.history.push('/cars')
 
   }
 
