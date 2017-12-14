@@ -11,26 +11,30 @@ class EditCar extends Component{
   }
 
   handleSubmit = (id) => {
-
     this.props.editCar(id, this.state);
-    this.setState({
-      year: ''
-
-    })
   }
+  gotValue = false;
 
   render(){
-    console.log('edit car page: ', this.props.car);
-
-    let yearTur = this.props.car ? this.props.car.year : "No Year"
+    
+    let car = {};
+    if(!this.gotValue && this.props.car){
+      car = this.props.car;
+      this.gotValue = true;
+    }else{
+      car = this.state;
+    }
 
     return(
       <div className="container">
-        <Form onSubmit={(e)=>this.handleSubmit(this.props.car.id)}>
+        <Form onSubmit={(e)=>{
+          e.preventDefault();
+          this.handleSubmit(this.props.car.id)
+        }}>
           <FormGroup>
             <Label for="trim">year</Label>
             <Input type="text" id="trim"
-              value={yearTur}
+              value={car.year}
               onChange={(e) => this.setState({ year: e.target.value })}
             />
           </FormGroup>

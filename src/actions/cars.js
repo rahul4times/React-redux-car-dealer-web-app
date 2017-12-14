@@ -41,3 +41,14 @@ export const editCar = (carId, editedCar) => {
     })
   }
 }
+
+export const deleteCar = (carId) => {
+  return async (dispatch) => {
+    dispatch({ type: REMOVE_CAR_PENDING })
+    let removedcar = await axios.delete(`http://localhost:8000/car/${carId}`)
+    dispatch({
+      type: REMOVE_CAR_SUCCESS,
+      payload: removedcar
+    })
+  }
+}

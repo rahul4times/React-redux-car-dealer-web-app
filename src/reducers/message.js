@@ -21,7 +21,6 @@ export default (state = [], action) => {
       return state;
     case REMOVE_MESSAGE_SUCCESS:
       return [...action.payload.data]
-      console.log('state on reducer: ', action.payload.data);
     default:
       return state;
   }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Table } from 'reactstrap';
 import { connect } from 'react-redux';
+import { deleteCar } from '../../actions/cars';
 import Icon from 'react-icons-kit';
 import { bin } from 'react-icons-kit/icomoon';
 import { pencil } from 'react-icons-kit/icomoon';
