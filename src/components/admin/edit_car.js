@@ -14,13 +14,15 @@ class EditCar extends Component{
   //   this.setState({ alertMsg: false });
   // }
 
-  updateOneCar = (id) => {
-    this.props.editCar(id, this.state);
+  updateOneCar = (values) => {
+    console.log('VALUES', values)
+    this.props.editCar(values);
     //this.setState({ alertMsg: true });
   }
 
   render(){
-    console.log('id: ', this.props);
+    let id = this.props.initialValues ? this.props.initialValues.id : null;
+    console.log('id: ');
     return(
 
       <div className="container">

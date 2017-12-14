@@ -31,10 +31,40 @@ export const createCar = (newCar) => {
   }
 }
 
-export const editCar = (carId, editedCar) => {
+export const editCar = (editedCar) => {
+  console.log(editedCar, "*****");
   return async (dispatch) => {
     dispatch({ type: EDIT_CAR_PENDING })
-    let updatedcar = await axios.patch(`http://localhost:8000/car/${carId}`, editedCar)
+    let bodyObj = {
+      car: {
+        year: editedCar.year,
+        make: editedCar.make,
+        model: editedCar.model,
+        trim: editedCar.trim,
+        engine: editedCar.engine,
+        drive_type: editedCar.drive_type,
+        body_type: editedCar.body_type,
+        ext_color: editedCar.ext_color,
+        int_color: editedCar.int_color,
+        transmission: editedCar.transmission,
+        price: editedCar.price,
+        sale: editedCar.sale,
+        status: editedCar.status,
+        vin: editedCar.vin
+      },
+      image: editedCar.link,
+      features: {
+        elect_stab: editedCar.elect_stab,
+        wireless: editedCar.wireless,
+        seat: editedCar.seat,
+        keyless: editedCar.keyless,
+        trip_comp: editedCar.trip_comp,
+        tire_pressure: editedCar.tire_pressure,
+        wiper: editedCar.wiper,
+        headlight: editedCar.headlight
+      }
+    }
+    let updatedcar = await axios.patch(`http://localhost:8000/car/${editedCar.id}`, bodyObj)
     dispatch({
       type: EDIT_CAR_SUCCESS,
       payload: updatedcar
