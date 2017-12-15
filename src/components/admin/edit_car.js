@@ -22,7 +22,7 @@ class EditCar extends Component{
       <div className="container">
         <br/>
         <div className="card border-primary mb-3">
-          <div className="card-header text-white bg-primary">Edit Car</div>
+          <div className="card-header text-white bg-primary">EDIT CAR</div>
           <div className="card-body text-primary">
             <Form
               onSubmit={this.props.handleSubmit(this.updateOneCar)}

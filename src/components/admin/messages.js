@@ -75,7 +75,7 @@ class Messages extends Component {
         <Row>
           <Col md="7">
             <div className="card border-primary mb-3">
-            <div className="card-header text-white bg-primary">Messages</div>
+            <div className="card-header text-white bg-primary">MESSAGES</div>
               <div className="card-body text-primary">
                 {messagesList}
               </div>

@@ -75,7 +75,7 @@ class NewCar extends Component {
       <div className="container">
         <br/>
         <div className="card border-primary mb-3">
-          <div className="card-header text-white bg-primary">Add New Car</div>
+          <div className="card-header text-white bg-primary">ADD NEW CAR</div>
           <div className="card-body text-primary">
             <Form onSubmit={this.handleSubmit}>
               <Row>

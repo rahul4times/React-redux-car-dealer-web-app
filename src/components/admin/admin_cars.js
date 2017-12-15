@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
-import { Table } from 'reactstrap';
+import { Table, Row, Col } from 'reactstrap';
 import { connect } from 'react-redux';
 import { deleteCar } from '../../actions/cars';
 import Icon from 'react-icons-kit';
 import { bin } from 'react-icons-kit/icomoon';
 import { pencil } from 'react-icons-kit/icomoon';
 import { Link } from 'react-router-dom';
+import TotalMessage from './total_messages';
+import TotalInventory from './total_inventory';
+import Specials from './specials';
 
 class Cars extends Component {
 
   handleDelete = (id) => {
-    console.log("delete car id: ", id);
     this.props.deleteCar(id);
-    //this.props.history.push('/admin/messages');
   }
 
   render(){
@@ -41,11 +42,27 @@ class Cars extends Component {
       )
     }) : null;
 
+    let totalInventory = this.props.cars ? this.props.cars : null;
+
+
+
     return(
       <div className="container">
         <br/>
+        <Row>
+          <Col md="4">
+            <TotalMessage totalInventory={totalInventory} />
+          </Col>
+          <Col md="4">
+            <TotalInventory />
+          </Col>
+          <Col md="4">
+            <Specials />
+          </Col>
+        </Row>
+        <br/>
         <div className="card border-primary mb-3">
-        <div className="card-header text-white bg-primary">Inventory</div>
+        <div className="card-header text-white bg-primary">INVENTORY</div>
         <div className="card-body">
           <Table hover>
             <thead className="text-success">
@@ -75,7 +92,9 @@ class Cars extends Component {
 
 function mapStateToProps(state, props){
   return{
-    cars: state.cars
+    cars: state.cars,
+    messages: state.messages
+
   }
 }
 
