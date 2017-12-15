@@ -8,6 +8,9 @@ import { car } from 'react-icons-kit/fa/car';
 import { facebook } from 'react-icons-kit/fa/facebook';
 import { twitter } from 'react-icons-kit/fa/twitter';
 import { instagram } from 'react-icons-kit/fa/instagram';
+import { googlePlus } from 'react-icons-kit/fa/googlePlus';
+import { rss } from 'react-icons-kit/fa/rss';
+
 import { Button } from 'reactstrap';
 
 
@@ -69,12 +72,12 @@ class OneCar extends Component {
                        <td>${price}</td>
                      </tr>
                      <tr>
-                       <td>Dealer's Discount:</td>
-                       <td>{sale}%</td>
+                       <td className="text-danger text-right">Dealer's Discount:</td>
+                       <td className="text-danger text-right">{sale}%</td>
                      </tr>
                      <tr>
-                       <td>G66 Price</td>
-                       <td>${g66price}</td>
+                       <td className="text-success">G66 Price</td>
+                       <td className="text-success">${g66price}</td>
                      </tr>
                    </tbody>
                   </Table>
@@ -150,16 +153,36 @@ class OneCar extends Component {
           <Col md="4">
             <div className="card border-secondary mb-3">
             <div className="card-header text-success"><h5>Share This Vehicle</h5></div>
-            <div className="card-body text-success">
-              <h4 className="card-title">
-                <Icon className="4x" icon={facebook}/>
-              </h4>
-              <h4 className="card-title">
-                <Icon icon={twitter}/>
-              </h4>
-              <h4 className="card-title">
-                <Icon icon={instagram}/>
-              </h4>
+            <div className="card-body">
+              <Row>
+                <Col md="4">
+                  <Icon className="text-muted" icon={facebook} size={90}/>
+                </Col>
+                <Col md="4">
+                  <Icon className="text-muted" icon={twitter} size={90}/>
+                </Col>
+                <Col md="4">
+                  <Icon className="text-muted" icon={instagram} size={90}/>
+                </Col>
+              </Row>
+              <Row>
+                <Col md="4">
+
+                </Col>
+                <Col md="4">
+                  <Icon className="text-muted" icon={googlePlus} size={90}/>
+                </Col>
+                <Col md="4">
+                  <Icon className="text-muted" icon={rss} size={90}/>
+                </Col>
+              </Row>
+
+
+
+
+
+
+
             </div>
           </div>
           </Col>
