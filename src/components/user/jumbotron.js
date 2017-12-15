@@ -10,18 +10,18 @@ import {
 const items = [
   {
     src: 'https://s3.amazonaws.com/cartool/background.jpg',
-    altText: 'Slide 1',
-    caption: 'Slide 1'
+    altText: 'Audi A3',
+    caption: 'Audi Luxury Class'
   },
   {
     src: 'https://s3.amazonaws.com/cartool/lam_bg.jpg',
-    altText: 'Slide 2',
-    caption: 'Slide 2'
+    altText: 'Lamborghini',
+    caption: 'Aventador SV Roadster'
   },
   {
     src: 'https://s3.amazonaws.com/cartool/camry_bg.jpg',
     altText: '',
-    caption: 'Slide 3'
+    caption: '2018 Camry'
   }
 ];
 
