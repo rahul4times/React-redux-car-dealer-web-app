@@ -8,20 +8,25 @@ const Car = ({car}) => {
 
   return (
     <div>
-      <Card className="carList-row" >
-        <Row>
-          <Col md="4">
-            <CardImg className="carlist-margin" top width="100%" src={car.link} alt={car.make} />
-          </Col>
-          <Col md="5">
-            <Link to={`/cars/${car.id}`}>
-              <CardTitle className="title">{car.year} {car.make} {car.model} {car.trim}</CardTitle>
-            </Link>
-            <CardSubtitle className="subtitle">Stock No: #{car.id}</CardSubtitle>
-            <CardBody>
-              <CardText>
-                <Table className="carlist-table">
-                  <tbody>
+
+      <Row>
+        <Col md="12">
+          <div className="card border-secondary mb-3">
+            <div className="card-header text-success">
+              <h4>
+                <Link to={`/cars/${car.id}`}>
+                  {car.year} {car.make} {car.model} {car.trim}
+                </Link>
+              </h4>
+            </div>
+            <div className="card-body">
+              <Row>
+                <Col md="5">
+                  <CardImg className="carlist-margin" top width="100%" src={car.link} alt={car.make} />
+                </Col>
+                <Col md="4">
+                  <Table className="striped">
+                    <tbody>
                     <tr>
                       <td>Engine:</td>
                       <td>{car.engine}</td>
@@ -51,48 +56,47 @@ const Car = ({car}) => {
                       <td>{car.vin}</td>
                     </tr>
                   </tbody>
-                </Table>
-              </CardText>
-            </CardBody>
-          </Col>
-          <Col md="3">
-            <CardTitle className="title"></CardTitle>
-            <CardSubtitle className="subtitle"></CardSubtitle>
-            <CardBody className="price">
-              <CardText>
-                <Table>
-                <tbody>
-                  <tr>
-                    <td>MSRP:</td>
-                    <td>${car.price}</td>
-                  </tr>
-                  <tr>
-                    <td>Dealer Discount:</td>
-                    <td>{car.sale}%</td>
-                  </tr>
-                  <tr>
-                    <td>Total:</td>
-                    <td>${car.price-car.price*car.sale/100}</td>
-                  </tr>
-                  <tr>
-                    <td>Est. Lease:</td>
-                    <td>$230/m*</td>
-                  </tr>
-                  <tr>
-                    <td>Est. Finance:</td>
-                    <td>$330/m*</td>
-                  </tr>
-                </tbody>
-              </Table>
-              </CardText>
-              <Link to={`/cars/${car.id}`}>
-              <Button className="btn btn-success">More</Button>
-            </Link>
-              <br/>
-            </CardBody>
-          </Col>
-        </Row>
-      </Card>
+                  </Table>
+                </Col>
+                <Col md="3">
+                  <Table className="striped">
+                    <tbody>
+                      <tr>
+                        <td className="text-primary text-right">MSRP:</td>
+                        <td className="text-primary text-right">${car.price}</td>
+                      </tr>
+                      <tr>
+                        <td className="text-danger text-right">Dealer Discount:</td>
+                        <td className="text-danger text-right">{car.sale}%</td>
+                      </tr>
+                      <tr>
+                        <td className="text-primary text-right">Total:</td>
+                        <td className="text-primary text-right">${car.price-car.price*car.sale/100}</td>
+                      </tr>
+                      <tr>
+                        <td className="text-primary text-right">Est. Lease:</td>
+                        <td className="text-primary text-right">$230/m*</td>
+                      </tr>
+                      <tr>
+                        <td className="text-primary text-right">Est. Finance:</td>
+                        <td className="text-primary text-right">$330/m*</td>
+                      </tr>
+                      <tr>
+                        <td className="text-right"></td>
+                        <td className="text-right">
+                          <Link to={`/cars/${car.id}`}>
+                          <Button className="btn btn-success">More</Button>
+                        </Link>
+                        </td>
+                      </tr>
+                  </tbody>
+                  </Table>
+                </Col>
+              </Row>
+            </div>
+          </div>
+        </Col>
+      </Row>
     </div>
   );
 };

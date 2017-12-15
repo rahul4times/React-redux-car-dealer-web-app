@@ -19,7 +19,7 @@ class OneCar extends Component {
 
 
   render(){
-    console.log('one car page: ', this.props);
+
     let id = this.props.car ? this.props.car.id : null;
     let year = this.props.car ? this.props.car.year : null;
     let make = this.props.car ? this.props.car.make : null;
@@ -44,7 +44,7 @@ class OneCar extends Component {
       <Container>
         <Row>
           <Col md="12">
-            <div className="card border-success mb-3">
+            <div className="card border-secondary mb-3">
             <div className="card-header">
               <h3>{year} {make} {model} {trim} </h3>
               <p className="vin-stock"><strong>VIN:</strong> {vin},  <strong>STOCK ID: </strong> {id}</p>
@@ -53,14 +53,14 @@ class OneCar extends Component {
           </Col>
         </Row>
         <div className="container">
-          <Row className="image-n-price">
+          <Row className="image-n-price border-secondary">
             <Col md="8">
               <Img className="singleImage" src={image} />
             </Col>
             <Col md="4">
 
               <div className="card border-secondary mb-3">
-                <div className="card-header text-white bg-success">Detail Pricing</div>
+                <div className="card-header text-success"><h5>Detail Pricing</h5></div>
                 <div className="card-body one-car-price">
                   <Table size="sm">
                     <tbody>
@@ -95,17 +95,20 @@ class OneCar extends Component {
               </div>
 
               <div className="card border-secondary mb-3">
-                <div className="card-header text-white bg-success">Want To Know More?</div>
-                <div className="card-body text-success">
+                <div className="card-header text-success"><h5>Reach Us</h5></div>
+                <div className="card-body text-primary">
                   <div className="row">
                     <h5>Phone: 888-123-9876</h5>
                   </div>
                   <div className="row">
-                    <Button color="btn btn-danger btn-sm">Get ePrice</Button>
+                    <div className="md=12">
+                      515 E Grant St,
+                      Phoenix, AZ 85004
+                    </div>
                   </div>
                   <br/>
                   <div className="row">
-                    <Button color="btn btn-danger btn-sm">Schedule Test Drive</Button>
+                    <div className="md=12"></div>
                   </div>
                 </div>
               </div>
@@ -115,8 +118,9 @@ class OneCar extends Component {
         <br/>
         <Row>
           <Col md="8">
-            <div className="card border-success mb-3">
-              <div className="card-header text-success">Highlighted Features</div>
+            <div className="card border-secondary mb-3">
+              <div className="card-header text-success">
+                <h5>Highlighted Features</h5></div>
               <div className="card-body">
                 <div className="feature-highlight">
                 <Table>
@@ -144,8 +148,8 @@ class OneCar extends Component {
             </div>
           </Col>
           <Col md="4">
-            <div className="card border-success mb-3">
-            <div className="card-header text-success">Share This Vehicle</div>
+            <div className="card border-secondary mb-3">
+            <div className="card-header text-success"><h5>Share This Vehicle</h5></div>
             <div className="card-body text-success">
               <h4 className="card-title">
                 <Icon className="4x" icon={facebook}/>
@@ -163,7 +167,8 @@ class OneCar extends Component {
         <Row>
           <Col md="12">
             <div className="card border-success">
-              <div className="card-header text-success">Get ePrice or Schedule Test Drive</div>
+              <div className="card-header text-white bg-success">
+                <h5>Get ePrice or Schedule Test Drive</h5></div>
                 <div className="card-body text-success">
                   <ContactForm id={id}/>
               </div>

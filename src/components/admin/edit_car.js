@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { editCar } from '../../actions/cars';
-import { Form, FormGroup, Label, Row, Col, Alert } from 'reactstrap';
+import { Form, FormGroup, Label, Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
 import Img from 'react-image';
