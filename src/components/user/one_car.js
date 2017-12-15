@@ -32,7 +32,7 @@ class OneCar extends Component {
     let price = this.props.car ? this.props.car.price : null;
     let sale = this.props.car ? this.props.car.sale : null;
     let vin = this.props.car ? this.props.car.vin : null;
-    let g66price = price - sale/100;
+    let g66price = price - price * sale/100;
 
     let electronic = this.props.car ? this.props.car.elect_stab : null;
     let wireless = this.props.car ? this.props.car.wireless : null;
@@ -68,16 +68,32 @@ class OneCar extends Component {
                   <Table size="sm">
                     <tbody>
                      <tr>
-                       <td>MSRP:</td>
-                       <td>${price}</td>
+                       <td>
+                         <strong>
+                          MSRP:
+                         </strong>
+                        </td>
+                       <td>
+                         <strong>
+                           ${price}
+                         </strong>
+                        </td>
                      </tr>
                      <tr>
                        <td className="text-danger text-right">Dealer's Discount:</td>
                        <td className="text-danger text-right">{sale}%</td>
                      </tr>
                      <tr>
-                       <td className="text-success">G66 Price</td>
-                       <td className="text-success">${g66price}</td>
+                       <td className="text-success">
+                         <strong>
+                           G66 Price
+                         </strong>
+                       </td>
+                       <td className="text-success">
+                          <strong>
+                            ${g66price}
+                          </strong>
+                        </td>
                      </tr>
                    </tbody>
                   </Table>
@@ -155,25 +171,19 @@ class OneCar extends Component {
             <div className="card-header text-success"><h5>Share This Vehicle</h5></div>
             <div className="card-body">
               <Row>
-                <Col md="4">
+                <Col md="6">
                   <Icon className="text-muted" icon={facebook} size={90}/>
                 </Col>
-                <Col md="4">
+                <Col md="6">
                   <Icon className="text-muted" icon={twitter} size={90}/>
-                </Col>
-                <Col md="4">
-                  <Icon className="text-muted" icon={instagram} size={90}/>
                 </Col>
               </Row>
               <Row>
-                <Col md="4">
-
+                <Col md="6">
+                  <Icon className="text-muted" icon={instagram} size={90}/>
                 </Col>
-                <Col md="4">
+                <Col md="6">
                   <Icon className="text-muted" icon={googlePlus} size={90}/>
-                </Col>
-                <Col md="4">
-                  <Icon className="text-muted" icon={rss} size={90}/>
                 </Col>
               </Row>
 
@@ -191,7 +201,7 @@ class OneCar extends Component {
           <Col md="12">
             <div className="card border-success">
               <div className="card-header text-white bg-success">
-                <h5>Get ePrice or Schedule Test Drive</h5></div>
+                <h5>Schedule Test Drive</h5></div>
                 <div className="card-body text-success">
                   <ContactForm id={id}/>
               </div>

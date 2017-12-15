@@ -8,7 +8,6 @@ const Car = ({car}) => {
 
   return (
     <div>
-
       <Row>
         <Col md="12">
           <div className="card border-secondary mb-3">
@@ -62,16 +61,32 @@ const Car = ({car}) => {
                   <Table className="striped">
                     <tbody>
                       <tr>
-                        <td className="text-primary text-right">MSRP:</td>
-                        <td className="text-primary text-right">${car.price}</td>
+                        <td className="text-primary text-right">
+                          <strong>
+                            MSRP:
+                          </strong>
+                          </td>
+                        <td className="text-primary text-right">
+                          <strong>
+                            ${car.price}
+                          </strong>
+                        </td>
                       </tr>
                       <tr>
                         <td className="text-danger text-right">Dealer Discount:</td>
                         <td className="text-danger text-right">{car.sale}%</td>
                       </tr>
                       <tr>
-                        <td className="text-primary text-right">Total:</td>
-                        <td className="text-primary text-right">${car.price-car.price*car.sale/100}</td>
+                        <td className="text-primary text-right">
+                          <strong>
+                            Total:
+                          </strong>
+                        </td>
+                        <td className="text-primary text-right">
+                          <strong>
+                            ${car.price-car.price*car.sale/100}
+                          </strong>
+                        </td>
                       </tr>
                       <tr>
                         <td className="text-primary text-right">Est. Lease:</td>
