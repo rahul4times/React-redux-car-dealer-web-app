@@ -9,11 +9,6 @@ import { facebook } from 'react-icons-kit/fa/facebook';
 import { twitter } from 'react-icons-kit/fa/twitter';
 import { instagram } from 'react-icons-kit/fa/instagram';
 import { googlePlus } from 'react-icons-kit/fa/googlePlus';
-import { rss } from 'react-icons-kit/fa/rss';
-
-import { Button } from 'reactstrap';
-
-
 import ContactForm from './contact';
 
 

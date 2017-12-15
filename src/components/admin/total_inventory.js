@@ -1,15 +1,62 @@
 import React, { Component } from 'react';
+import { Row, Col } from 'reactstrap';
 
 class TotalInventory extends Component{
   render(){
-    console.log('inventory page: ', this.props);
+
+    let sedan = this.props.totalInventory ? this.props.totalInventory.filter(inventory => inventory.body_type == "Sedan") : null;
+
+    let coupe = this.props.totalInventory ? this.props.totalInventory.filter(inventory => inventory.body_type == "Coupe") : null;
+
+    let suv = this.props.totalInventory ? this.props.totalInventory.filter(inventory => inventory.body_type == "SUV") : null;
+
+    let van = this.props.totalInventory ? this.props.totalInventory.filter(inventory => inventory.body_type == "Van") : null;
+
+    let convertible = this.props.totalInventory ? this.props.totalInventory.filter(inventory => inventory.body_type == "Convertible") : null;
+
+    let hatchback = this.props.totalInventory ? this.props.totalInventory.filter(inventory => inventory.body_type == "Hatchback") : null;
+
+    let truck = this.props.totalInventory ? this.props.totalInventory.filter(inventory => inventory.body_type == "Truck") : null;
+
+
+
     return(
       <div>
         <div className="card text-white bg-danger mb-3">
           <div className="card-header">INVENTORY</div>
           <div className="card-body">
-            <h4 className="card-title">Danger card title</h4>
-            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <Row>
+              <Col md="6">
+                Coupe: {coupe.length}
+              </Col>
+              <Col md="6">
+                Convertible: {convertible.length}
+              </Col>
+            </Row>
+            <Row>
+              <Col md="6">
+                Hatchback: {hatchback.length}
+              </Col>
+              <Col md="6">
+                SUV: {suv.length}
+              </Col>
+            </Row>
+            <Row>
+              <Col md="6">
+                Sedans: {sedan.length}
+              </Col>
+              <Col md="6">
+                Truck: {truck.length}
+              </Col>
+            </Row>
+            <Row>
+              <Col md="6">
+                Van: {van.length}
+              </Col>
+              <Col md="6">
+
+              </Col>
+            </Row>
           </div>
         </div>
       </div>

@@ -43,21 +43,21 @@ class Cars extends Component {
     }) : null;
 
     let totalInventory = this.props.cars ? this.props.cars : null;
-
-
+    let totalMessages = this.props.messages ? this.props.messages : null;
+    let specials = this.props.cars ? this.props.cars : null;
 
     return(
       <div className="container">
         <br/>
         <Row>
           <Col md="4">
-            <TotalMessage totalInventory={totalInventory} />
+            <TotalMessage totalMessages={totalMessages}/>
           </Col>
           <Col md="4">
-            <TotalInventory />
+            <TotalInventory totalInventory={totalInventory} />
           </Col>
           <Col md="4">
-            <Specials />
+            <Specials specials={specials}/>
           </Col>
         </Row>
         <br/>
