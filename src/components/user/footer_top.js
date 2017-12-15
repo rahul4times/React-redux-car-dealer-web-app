@@ -8,6 +8,7 @@ export default class FooterTop extends Component {
           <div className="row">
             <div className="col-4">
               <h5>CONTACT</h5>
+              G66 Cars <br/>
               515 E Grant St, <br/>
               Phoenix, AZ 85004 <br/>
               Phone: (602) 362-2670

@@ -11,7 +11,7 @@ const items = [
   {
     src: 'https://s3.amazonaws.com/cartool/background.jpg',
     altText: 'Audi A3',
-    caption: 'Audi Luxury Class'
+    caption: 'Checkout Christmas Sale'
   },
   {
     src: 'https://s3.amazonaws.com/cartool/lam_bg.jpg',
@@ -72,7 +72,7 @@ class JumboTron extends Component {
           key={item.src}
         >
           <img src={item.src} alt={item.altText} />
-          <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
+          <CarouselCaption captionHeader={item.caption} />
         </CarouselItem>
       );
     });
