@@ -112,7 +112,7 @@ class OneCar extends Component {
                 <div className="card-header text-success"><h5>Reach Us</h5></div>
                 <div className="card-body text-primary">
                   <div className="row">
-                    <h5>Phone: 888-123-9876</h5>
+                    <h5>Phone: (602) 362-2670</h5>
                   </div>
                   <div className="row">
                     <div className="md=12">

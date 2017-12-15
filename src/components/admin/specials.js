@@ -1,23 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+
 class Specials extends Component{
   render(){
     console.log('special page: ', this.props.cars);
 
     let specialsOnCars = this.props.cars ? this.props.cars.map(car =>{
       return(
-        <li key={car.id}>{car.year} {car.make} {car.model}</li>
+        <p key={car.id}>
+          <Link to={`/admin/editcar/${car.id}`}>
+          {car.year} {car.make} {car.model} - {car.sale}%
+        </Link>
+        </p>
       )
     }) : null;
 
     return(
       <div>
-        <div className="card text-white bg-warning mb-3">
+        <div className="card text-white bg-primary mb-3">
           <div className="card-header">SPECIALS</div>
           <div className="card-body">
-            <ul>
-              {specialsOnCars}
-            </ul>
+            {specialsOnCars}
           </div>
         </div>
       </div>
