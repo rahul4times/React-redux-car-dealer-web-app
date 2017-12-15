@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 
 class Specials extends Component{
   render(){
-    console.log('special page: ', this.props.cars);
-
+    
     let specialsOnCars = this.props.cars ? this.props.cars.map(car =>{
       return(
         <p key={car.id}>

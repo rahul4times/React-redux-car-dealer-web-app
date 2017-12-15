@@ -1,14 +1,33 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Row, Col } from 'reactstrap';
 
 class TotalMessage extends Component{
   render(){
+    console.log('message: ', this.props.messages);
+
+    let potentialBuyers = this.props.messages ? this.props.messages.map(message => {
+      return(
+        <Link to={`/admin/messages/`}>
+          <Row key={message.id}>
+            <Col md="6">
+              {message.uname}
+            </Col>
+            <Col md="6">
+              {message.uinterest}
+            </Col>
+          </Row>
+        </Link>
+      )
+    }) : null;
+
     return(
       <div>
-        <div className="card text-white bg-success mb-3">
-          <div className="card-header">TOTAL MESSAGES</div>
+        <div className="card text-white bg-primary mb-3">
+          <div className="card-header">POTENTIAL BUYERS</div>
           <div className="card-body">
-            <h4 className="card-title">Success card title</h4>
-            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            {potentialBuyers}
           </div>
         </div>
       </div>
@@ -16,4 +35,11 @@ class TotalMessage extends Component{
   }
 }
 
-export default TotalMessage;
+function mapStateToProps(state, props){
+  return{
+    messages: state.messages
+
+  }
+}
+
+export default connect(mapStateToProps, null)(TotalMessage);
