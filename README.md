@@ -67,6 +67,30 @@ Admin
   * Admin will see a list of messages by users
   * Admin will read user's messages and follow up
 
-## User Home Page
+## User - Home Page
 
-![user home page](https://s3.amazonaws.com/cartool/user-home-page.png)  
+![user home page](https://s3.amazonaws.com/cartool/user-home-page.png)
+
+## User - Search car by make
+
+![search car by make](https://s3.amazonaws.com/cartool/user-car-search-by-make.png)
+
+## User - Car detail
+
+![user car detail](https://s3.amazonaws.com/cartool/user-car-detail.png)
+
+## Admin - Dashboard
+
+![admin dashboard](https://s3.amazonaws.com/cartool/admin-dashboard.png)
+
+## Admin - Add car
+
+![admin add car](https://s3.amazonaws.com/cartool/admin-add-new-car.png)
+
+## Admin - Edit car
+
+![admin edit car](https://s3.amazonaws.com/cartool/admin-edit-car.png)
+
+## Admin - Messages
+
+![admin messages](https://s3.amazonaws.com/cartool/admin-messages.png)
