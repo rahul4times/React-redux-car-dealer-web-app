@@ -1,8 +1,8 @@
 ## Project description
-g66 Car Dealership Web App provides car shoppers a better way to buy a car. Browse new cars online and get full information about car and schedule test drive.
+This Web App provides car shoppers a better way to buy a car. Browse new cars online and get full information about car and schedule test drive.
 
 ## Who uses it?
-g66 Car Dealership Web App will be used by both dealer and potential customers.
+This App will be used by both dealer and potential customers.
 
 ## Outputs from g66 Car Dealership Web App
 Outputs for users
