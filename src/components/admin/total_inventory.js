@@ -22,7 +22,7 @@ class TotalInventory extends Component{
 
     return(
       <div>
-        <div className="card text-white bg-danger mb-3">
+        <div className="card text-white bg-info mb-3">
           <div className="card-header">TOTAL INVENTORY</div>
           <div className="card-body">
             <Row>

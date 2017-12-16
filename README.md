@@ -66,3 +66,7 @@ Admin
   * Admin will be able to Add, Edit and Delete cars from inventory
   * Admin will see a list of messages by users
   * Admin will read user's messages and follow up
+
+## User Home Page
+
+![user home page](https://s3.amazonaws.com/cartool/user-home-page.png)  
